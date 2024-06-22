@@ -1,5 +1,6 @@
 import Navbar from "@/components/navbar";
 import Hero from "@/components/hero";
+import Grid from "@/components/grid";
 
 export default function Home() {
   return (
@@ -20,7 +21,11 @@ export default function Home() {
         </div>
       </div>
 
-      <Hero />
+      <div className="max-w-7xl flex flex-col items-center justify-center mx-auto">
+        <Hero />
+
+        <Grid />
+      </div>
     </main>
   );
 }
