@@ -1,6 +1,7 @@
 import Navbar from "@/components/navbar";
 import Hero from "@/components/hero";
 import Grid from "@/components/grid";
+import Projects from "@/components/projects";
 
 export default function Home() {
   return (
@@ -25,6 +26,8 @@ export default function Home() {
         <Hero />
 
         <Grid />
+
+        <Projects />
       </div>
     </main>
   );
