@@ -22,12 +22,37 @@ const Navbar = () => {
     >
       <div className="max-w-7xl flex items-center justify-between mx-auto max-h-10">
         {/*Left*/}
-        <Link href={"https://github.com/RiP3rQ"} target={"_blank"}>
-          <Avatar className={"cursor-pointer"}>
-            <AvatarImage src="/hero.png" />
-            <AvatarFallback>RiP3rQ</AvatarFallback>
-          </Avatar>
-        </Link>
+        <HoverCard openDelay={0} closeDelay={0}>
+          <HoverCardTrigger asChild>
+            <Link href={"https://github.com/RiP3rQ"} target={"_blank"}>
+              <Avatar className={"cursor-pointer"}>
+                <AvatarImage src="/hero.png" />
+                <AvatarFallback>RiP3rQ</AvatarFallback>
+              </Avatar>
+            </Link>
+          </HoverCardTrigger>
+          <HoverCardContent className="w-80">
+            <div className="flex justify-between space-x-4">
+              <Avatar>
+                <AvatarImage src="https://github.com/RiP3rQ" />
+                <AvatarFallback>RiP3rQ</AvatarFallback>
+              </Avatar>
+              <div className="space-y-1">
+                <h4 className="text-sm font-semibold">Rafał "RiP3rQ" Pompa</h4>
+                <p className="text-sm">
+                  Converting concepts into fully realized, end-to-end solutions
+                  as a Junior Full Stack Developer.
+                </p>
+                <div className="flex items-center pt-2">
+                  <CalendarDays className="mr-2 h-4 w-4 opacity-70" />{" "}
+                  <span className="text-xs text-muted-foreground">
+                    Developing since February 2020
+                  </span>
+                </div>
+              </div>
+            </div>
+          </HoverCardContent>
+        </HoverCard>
         {/*Right*/}
         <div className="hidden md:flex items-center justify-between text-white max-h-10">
           <HoverCard openDelay={0} closeDelay={0}>
