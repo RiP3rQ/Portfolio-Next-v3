@@ -27,6 +27,7 @@ export default function Home() {
           <Footer />
         </TracingBeam>
       </div>
+
       {/* Lang provider*/}
       <div className="fixed bottom-4 right-6 z-50">
         <LanguageToggle />

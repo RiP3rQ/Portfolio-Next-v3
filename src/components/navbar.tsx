@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { CalendarDays } from "lucide-react";
@@ -10,10 +10,27 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import Link from "next/link";
+import { useLocation } from "@/providers/localization-provider";
+// import data
+import { navbar as EnglishNavbar } from "@/locale/english";
+import { navbar as PolishNavbar } from "@/locale/polish";
 
 const Navbar = () => {
-  // TODO: STATIC PICTURES FOR LINKS
   // TODO: CONTACT SHEET
+  const { data } = useLocation();
+  const [fetchedData, setFetchedData] = useState(null);
+
+  useEffect(() => {
+    if (data === "EN") {
+      setFetchedData(EnglishNavbar);
+    } else {
+      setFetchedData(PolishNavbar);
+    }
+  }, [data]);
+
+  if (!fetchedData) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <nav
@@ -24,29 +41,28 @@ const Navbar = () => {
         {/*Left*/}
         <HoverCard openDelay={0} closeDelay={0}>
           <HoverCardTrigger asChild>
-            <Link href={"https://github.com/RiP3rQ"} target={"_blank"}>
+            <Link href={fetchedData.profile.link} target={"_blank"}>
               <Avatar className={"cursor-pointer"}>
-                <AvatarImage src="/hero.png" />
-                <AvatarFallback>RiP3rQ</AvatarFallback>
+                <AvatarImage src={fetchedData.profile.image} />
+                <AvatarFallback>{fetchedData.profile.slug}</AvatarFallback>
               </Avatar>
             </Link>
           </HoverCardTrigger>
           <HoverCardContent className="w-80">
             <div className="flex justify-between space-x-4">
               <Avatar>
-                <AvatarImage src="https://github.com/RiP3rQ" />
-                <AvatarFallback>RiP3rQ</AvatarFallback>
+                <AvatarImage src={fetchedData.profile.image} />
+                <AvatarFallback>{fetchedData.profile.slug}</AvatarFallback>
               </Avatar>
               <div className="space-y-1">
-                <h4 className="text-sm font-semibold">Rafał "RiP3rQ" Pompa</h4>
-                <p className="text-sm">
-                  Converting concepts into fully realized, end-to-end solutions
-                  as a Junior Full Stack Developer.
-                </p>
+                <h4 className="text-sm font-semibold">
+                  {fetchedData.profile.title}
+                </h4>
+                <p className="text-sm">{fetchedData.profile.description}</p>
                 <div className="flex items-center pt-2">
                   <CalendarDays className="mr-2 h-4 w-4 opacity-70" />{" "}
                   <span className="text-xs text-muted-foreground">
-                    Developing since February 2020
+                    {fetchedData.profile.dateText}
                   </span>
                 </div>
               </div>
@@ -57,23 +73,23 @@ const Navbar = () => {
         <div className="hidden md:flex items-center justify-between text-white max-h-10">
           <HoverCard openDelay={0} closeDelay={0}>
             <HoverCardTrigger asChild>
-              <Button variant="link">Github</Button>
+              <Button variant="link">{fetchedData.github.title}</Button>
             </HoverCardTrigger>
             <HoverCardContent className="w-80">
               <div className="flex justify-between space-x-4">
                 <Avatar>
-                  <AvatarImage src="https://github.com/github.png" />
-                  <AvatarFallback>Github</AvatarFallback>
+                  <AvatarImage src={fetchedData.github.image} />
+                  <AvatarFallback>{fetchedData.github.slug}</AvatarFallback>
                 </Avatar>
                 <div className="space-y-1">
-                  <h4 className="text-sm font-semibold">Github</h4>
-                  <p className="text-sm">
-                    Look at my projects and contributions on Github.
-                  </p>
+                  <h4 className="text-sm font-semibold">
+                    {fetchedData.github.title}
+                  </h4>
+                  <p className="text-sm">{fetchedData.github.description}</p>
                   <div className="flex items-center pt-2">
                     <CalendarDays className="mr-2 h-4 w-4 opacity-70" />{" "}
                     <span className="text-xs text-muted-foreground">
-                      Joined July 2022
+                      {fetchedData.github.dateText}
                     </span>
                   </div>
                 </div>
@@ -82,23 +98,23 @@ const Navbar = () => {
           </HoverCard>
           <HoverCard openDelay={0} closeDelay={0}>
             <HoverCardTrigger asChild>
-              <Button variant="link">LinkedIn</Button>
+              <Button variant="link">{fetchedData.linkedin.title}</Button>
             </HoverCardTrigger>
             <HoverCardContent className="w-80">
               <div className="flex justify-between space-x-4">
                 <Avatar>
-                  <AvatarImage src="https://github.com/linkedin.png" />
-                  <AvatarFallback>LinkedIn</AvatarFallback>
+                  <AvatarImage src={fetchedData.linkedin.image} />
+                  <AvatarFallback>{fetchedData.linkedin.slug}</AvatarFallback>
                 </Avatar>
                 <div className="space-y-1">
-                  <h4 className="text-sm font-semibold">LinkedIn</h4>
-                  <p className="text-sm">
-                    Connect with me on LinkedIn for professional networking.
-                  </p>
+                  <h4 className="text-sm font-semibold">
+                    {fetchedData.linkedin.title}
+                  </h4>
+                  <p className="text-sm">{fetchedData.linkedin.description}</p>
                   <div className="flex items-center pt-2">
                     <CalendarDays className="mr-2 h-4 w-4 opacity-70" />{" "}
                     <span className="text-xs text-muted-foreground">
-                      Joined December 2023
+                      {fetchedData.linkedin.dateText}
                     </span>
                   </div>
                 </div>
@@ -107,30 +123,38 @@ const Navbar = () => {
           </HoverCard>
           <HoverCard openDelay={0} closeDelay={0}>
             <HoverCardTrigger asChild>
-              <Button variant="link">Ask AI</Button>
+              <Button variant="link">{fetchedData.ai.title}</Button>
             </HoverCardTrigger>
             <HoverCardContent className="w-80">
               <div className="flex justify-between space-x-4">
                 <Avatar>
-                  <AvatarImage src="https://github.com/ai.png" />
-                  <AvatarFallback>AI</AvatarFallback>
+                  <AvatarImage src={fetchedData.ai.image} />
+                  <AvatarFallback>{fetchedData.ai.slug}</AvatarFallback>
                 </Avatar>
                 <div className="space-y-1">
-                  <h4 className="text-sm font-semibold">Ask AI assistant</h4>
-                  <p className="text-sm">
-                    Ask my AI assistant for more information about me.
-                  </p>
+                  <h4 className="text-sm font-semibold">
+                    {fetchedData.ai.title}
+                  </h4>
+                  <p className="text-sm">{fetchedData.ai.description}</p>
                   <div className="flex items-center pt-2">
                     <CalendarDays className="mr-2 h-4 w-4 opacity-70" />{" "}
                     <span className="text-xs text-muted-foreground">
-                      Created July 2024
+                      {fetchedData.ai.dateText}
                     </span>
                   </div>
-                </div>
+
+
+                  function PolishData(prevState: null): null {
+    throw new Error("Function not implemented.");
+}
+             function EnglishData(prevState: null): null {
+    throw new Error("Function not implemented.");
+}
+          </div>
               </div>
             </HoverCardContent>
           </HoverCard>
-          <Button variant={"link"}>Contact</Button>
+          <Button variant={"link"}>{fetchedData.contact.title}</Button>
         </div>
       </div>
     </nav>
