@@ -11,12 +11,12 @@ export const gridItems = [
   },
   {
     id: 2,
-    title: "Transforming Ideas into Robust Digital Solutions ",
+    title: "Transforming Ideas into Robust Digital Solutions. ",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
-    titleClassName: "justify-end",
-    img: "/b1.svg",
+    titleClassName: "justify-start",
+    img: "",
     spareImg: "",
   },
   {
@@ -34,15 +34,15 @@ export const gridItems = [
     title: "Empowering Innovation Through Full-Stack Expertise.",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
-    imgClassName: "",
+    imgClassName: "absolute right-0 bottom-0 w-60",
     titleClassName: "justify-start",
-    img: "/grid.svg",
-    spareImg: "/b4.svg",
+    img: "/b4.svg",
+    spareImg: "/grid.svg",
   },
 
   {
     id: 5,
-    title: "Currently building AI Next.js project's and learing RUST language.",
+    title: "Currently building AI Next projects and learning RUST.",
     description: "The Inside Scoop",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
@@ -50,6 +50,7 @@ export const gridItems = [
     img: "/b5.svg",
     spareImg: "/grid.svg",
   },
+  // TODO: CHANGE IMAGES
   {
     id: 6,
     title: "Do you want to start a project together?",

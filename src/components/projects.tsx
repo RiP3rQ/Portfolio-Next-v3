@@ -4,14 +4,12 @@ import { FaLocationArrow } from "react-icons/fa6";
 
 import { projects } from "@/data";
 import { PinContainer } from "@/components/ui/Aceternity/Pin";
+import ProjectsTitle from "@/components/projects-title";
 
 const RecentProjects = () => {
   return (
     <div className="py-20">
-      <h1 className="font-bold text-4xl md:text-5xl text-center">
-        A small selection of{" "}
-        <span className="text-[#CBACF9]">recent projects</span>
-      </h1>
+      <ProjectsTitle />
       <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
         {projects.map((item) => (
           <div
