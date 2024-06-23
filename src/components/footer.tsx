@@ -1,22 +1,42 @@
-import { FaLocationArrow } from "react-icons/fa6";
+"use client";
 
+import { FaLocationArrow } from "react-icons/fa6";
 import { socialMedia } from "@/data";
 import MagicButton from "@/components/ui/Aceternity/MagicButton";
+import { useLocation } from "@/providers/localization-provider";
+import React, { useEffect, useState } from "react";
+import { footer as EnglishFooter } from "@/locale/english";
+import { footer as PolishFooter } from "@/locale/polish";
 
 const Footer = () => {
+  const { data } = useLocation();
+  const [fetchedData, setFetchedData] = useState<typeof EnglishFooter>(null);
+
+  useEffect(() => {
+    if (data === "EN") {
+      setFetchedData(EnglishFooter);
+    } else {
+      setFetchedData(PolishFooter);
+    }
+  }, [data]);
+
+  if (!fetchedData) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <footer className="w-full pt-20 pb-10" id="contact">
       <div className="flex flex-col items-center">
         <h1 className="font-bold text-4xl md:text-5xl text-center lg:max-w-[45vw]">
-          Ready to take <span className="text-[#CBACF9]">your</span> digital
-          presence to the next level?
+          {fetchedData.title_part1}{" "}
+          <span className="text-[#CBACF9]">{fetchedData.title_part2}</span>{" "}
+          {fetchedData.title_part3}
         </h1>
         <p className="text-white-200 md:mt-10 my-5 text-center">
-          Reach out to me today and let&apos;s discuss how I can help you
-          achieve your goals.
+          {fetchedData.description}
         </p>
         <MagicButton
-          title="Let's get in touch"
+          title={fetchedData.button}
           icon={<FaLocationArrow />}
           position="right"
         />

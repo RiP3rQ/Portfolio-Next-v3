@@ -145,3 +145,12 @@ export const approach = {
     colors: [[125, 211, 252]],
   },
 };
+
+export const footer = {
+  title_part1: "Ready to take ",
+  title_part2: "your",
+  title_part3: " digital presence to the next level?",
+  description:
+    "Reach out to me today and let's discuss how I can help you achieve your goals.",
+  button: "Let's get in touch",
+};

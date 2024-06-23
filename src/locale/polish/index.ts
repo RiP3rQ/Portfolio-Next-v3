@@ -144,3 +144,12 @@ export const approach = {
     colors: [[125, 211, 252]],
   },
 };
+
+export const footer = {
+  title_part1: "Gotowy, by zabrać ",
+  title_part2: " swoją",
+  title_part3: " cyfrową obecność na wyższy poziom?",
+  description:
+    "Skontaktuj się ze mną jeszcze dziś, aby omówić, jak mogę pomóc Ci osiągnąć swoje cele.",
+  button: "Nawiąż kontakt",
+};
