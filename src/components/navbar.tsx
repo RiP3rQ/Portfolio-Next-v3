@@ -10,130 +10,157 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import Link from "next/link";
+import { useSheets } from "@/providers/sheet-provider";
+import SheetMounted from "@/components/sheets/sheet-main";
 
 const Navbar = () => {
   // TODO: STATIC PICTURES FOR LINKS
-  // TODO: CONTACT SHEET
+  const { setData } = useSheets();
 
   return (
-    <nav
-      className="sticky top-0 p-0 max-w-full z-[999] xl:items-center
+    <>
+      <SheetMounted />
+      <nav
+        className="sticky top-0 p-0 max-w-full z-[60] xl:items-center
       dark:shadow-lg dark:shadow-[#2a0e61] bg-[#03001417] backdrop-blur-md h-10"
-    >
-      <div className="max-w-7xl flex items-center justify-between mx-auto max-h-10">
-        {/*Left*/}
-        <HoverCard openDelay={0} closeDelay={0}>
-          <HoverCardTrigger asChild>
-            <Link href={"https://github.com/RiP3rQ"} target={"_blank"}>
-              <Avatar className={"cursor-pointer"}>
-                <AvatarImage src="/hero.png" />
-                <AvatarFallback>RiP3rQ</AvatarFallback>
-              </Avatar>
-            </Link>
-          </HoverCardTrigger>
-          <HoverCardContent className="w-80">
-            <div className="flex justify-between space-x-4">
-              <Avatar>
-                <AvatarImage src="https://github.com/RiP3rQ" />
-                <AvatarFallback>RiP3rQ</AvatarFallback>
-              </Avatar>
-              <div className="space-y-1">
-                <h4 className="text-sm font-semibold">Rafał "RiP3rQ" Pompa</h4>
-                <p className="text-sm">
-                  Converting concepts into fully realized, end-to-end solutions
-                  as a Junior Full Stack Developer.
-                </p>
-                <div className="flex items-center pt-2">
-                  <CalendarDays className="mr-2 h-4 w-4 opacity-70" />{" "}
-                  <span className="text-xs text-muted-foreground">
-                    Developing since February 2020
-                  </span>
-                </div>
-              </div>
-            </div>
-          </HoverCardContent>
-        </HoverCard>
-        {/*Right*/}
-        <div className="hidden md:flex items-center justify-between text-white max-h-10">
+      >
+        <div className="max-w-7xl flex items-center justify-between mx-auto max-h-10">
+          {/*Left*/}
           <HoverCard openDelay={0} closeDelay={0}>
             <HoverCardTrigger asChild>
-              <Button variant="link">Github</Button>
+              <Link href={"https://github.com/RiP3rQ"} target={"_blank"}>
+                <Avatar className={"cursor-pointer"}>
+                  <AvatarImage src="/hero.png" />
+                  <AvatarFallback>RiP3rQ</AvatarFallback>
+                </Avatar>
+              </Link>
             </HoverCardTrigger>
             <HoverCardContent className="w-80">
               <div className="flex justify-between space-x-4">
                 <Avatar>
-                  <AvatarImage src="https://github.com/github.png" />
-                  <AvatarFallback>Github</AvatarFallback>
+                  <AvatarImage src="https://github.com/RiP3rQ" />
+                  <AvatarFallback>RiP3rQ</AvatarFallback>
                 </Avatar>
                 <div className="space-y-1">
-                  <h4 className="text-sm font-semibold">Github</h4>
+                  <h4 className="text-sm font-semibold">
+                    Rafał `&quot;`RiP3rQ`&quot;` Pompa
+                  </h4>
                   <p className="text-sm">
-                    Look at my projects and contributions on Github.
+                    Converting concepts into fully realized, end-to-end
+                    solutions as a Junior Full Stack Developer.
                   </p>
                   <div className="flex items-center pt-2">
                     <CalendarDays className="mr-2 h-4 w-4 opacity-70" />{" "}
                     <span className="text-xs text-muted-foreground">
-                      Joined July 2022
+                      Developing since February 2020
                     </span>
                   </div>
                 </div>
               </div>
             </HoverCardContent>
           </HoverCard>
-          <HoverCard openDelay={0} closeDelay={0}>
-            <HoverCardTrigger asChild>
-              <Button variant="link">LinkedIn</Button>
-            </HoverCardTrigger>
-            <HoverCardContent className="w-80">
-              <div className="flex justify-between space-x-4">
-                <Avatar>
-                  <AvatarImage src="https://github.com/linkedin.png" />
-                  <AvatarFallback>LinkedIn</AvatarFallback>
-                </Avatar>
-                <div className="space-y-1">
-                  <h4 className="text-sm font-semibold">LinkedIn</h4>
-                  <p className="text-sm">
-                    Connect with me on LinkedIn for professional networking.
-                  </p>
-                  <div className="flex items-center pt-2">
-                    <CalendarDays className="mr-2 h-4 w-4 opacity-70" />{" "}
-                    <span className="text-xs text-muted-foreground">
-                      Joined December 2023
-                    </span>
+          {/*Right*/}
+          <div className="hidden md:flex items-center justify-between text-white max-h-10">
+            <HoverCard openDelay={0} closeDelay={0}>
+              <HoverCardTrigger asChild>
+                <Button variant="link">Github</Button>
+              </HoverCardTrigger>
+              <HoverCardContent className="w-80">
+                <div className="flex justify-between space-x-4">
+                  <Avatar>
+                    <AvatarImage src="https://github.com/github.png" />
+                    <AvatarFallback>Github</AvatarFallback>
+                  </Avatar>
+                  <div className="space-y-1">
+                    <h4 className="text-sm font-semibold">Github</h4>
+                    <p className="text-sm">
+                      Look at my projects and contributions on Github.
+                    </p>
+                    <div className="flex items-center pt-2">
+                      <CalendarDays className="mr-2 h-4 w-4 opacity-70" />{" "}
+                      <span className="text-xs text-muted-foreground">
+                        Joined July 2022
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </HoverCardContent>
-          </HoverCard>
-          <HoverCard openDelay={0} closeDelay={0}>
-            <HoverCardTrigger asChild>
-              <Button variant="link">Ask AI</Button>
-            </HoverCardTrigger>
-            <HoverCardContent className="w-80">
-              <div className="flex justify-between space-x-4">
-                <Avatar>
-                  <AvatarImage src="https://github.com/ai.png" />
-                  <AvatarFallback>AI</AvatarFallback>
-                </Avatar>
-                <div className="space-y-1">
-                  <h4 className="text-sm font-semibold">Ask AI assistant</h4>
-                  <p className="text-sm">
-                    Ask my AI assistant for more information about me.
-                  </p>
-                  <div className="flex items-center pt-2">
-                    <CalendarDays className="mr-2 h-4 w-4 opacity-70" />{" "}
-                    <span className="text-xs text-muted-foreground">
-                      Created July 2024
-                    </span>
+              </HoverCardContent>
+            </HoverCard>
+            <HoverCard openDelay={0} closeDelay={0}>
+              <HoverCardTrigger asChild>
+                <Button variant="link">LinkedIn</Button>
+              </HoverCardTrigger>
+              <HoverCardContent className="w-80">
+                <div className="flex justify-between space-x-4">
+                  <Avatar>
+                    <AvatarImage src="https://github.com/linkedin.png" />
+                    <AvatarFallback>LinkedIn</AvatarFallback>
+                  </Avatar>
+                  <div className="space-y-1">
+                    <h4 className="text-sm font-semibold">LinkedIn</h4>
+                    <p className="text-sm">
+                      Connect with me on LinkedIn for professional networking.
+                    </p>
+                    <div className="flex items-center pt-2">
+                      <CalendarDays className="mr-2 h-4 w-4 opacity-70" />{" "}
+                      <span className="text-xs text-muted-foreground">
+                        Joined December 2023
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </HoverCardContent>
-          </HoverCard>
-          <Button variant={"link"}>Contact</Button>
+              </HoverCardContent>
+            </HoverCard>
+            <HoverCard openDelay={0} closeDelay={0}>
+              <HoverCardTrigger asChild>
+                <Button
+                  variant="link"
+                  onClick={() => {
+                    setData({
+                      isOpen: true,
+                      currentSheet: "AI",
+                    });
+                  }}
+                >
+                  Ask AI
+                </Button>
+              </HoverCardTrigger>
+              <HoverCardContent className="w-80">
+                <div className="flex justify-between space-x-4">
+                  <Avatar>
+                    <AvatarImage src="https://github.com/ai.png" />
+                    <AvatarFallback>AI</AvatarFallback>
+                  </Avatar>
+                  <div className="space-y-1">
+                    <h4 className="text-sm font-semibold">Ask AI assistant</h4>
+                    <p className="text-sm">
+                      Ask my AI assistant for more information about me.
+                    </p>
+                    <div className="flex items-center pt-2">
+                      <CalendarDays className="mr-2 h-4 w-4 opacity-70" />{" "}
+                      <span className="text-xs text-muted-foreground">
+                        Created July 2024
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </HoverCardContent>
+            </HoverCard>
+            <Button
+              variant={"link"}
+              onClick={() => {
+                setData({
+                  isOpen: true,
+                  currentSheet: "Contact",
+                });
+              }}
+            >
+              Contact
+            </Button>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 };
 

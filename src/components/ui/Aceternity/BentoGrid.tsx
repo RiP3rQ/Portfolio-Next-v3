@@ -13,6 +13,7 @@ import MagicButton from "@/components/ui/Aceternity/MagicButton";
 import TechStackMovingLists from "@/components/ui/Aceternity/TechStackMovingLists";
 import { Meteors } from "@/components/ui/Aceternity/Meteors";
 import { GlowingStarsBackgroundCard } from "@/components/ui/Aceternity/GlowingStarts";
+import { useSheets } from "@/providers/sheet-provider";
 
 export const BentoGrid = ({
   className,
@@ -44,7 +45,6 @@ export const BentoGridItem = ({
   imgClassName,
   titleClassName,
   spareImg,
-  customTitleNameClass,
 }: {
   className?: string;
   id: number;
@@ -54,8 +54,8 @@ export const BentoGridItem = ({
   imgClassName?: string;
   titleClassName?: string;
   spareImg?: string;
-  customTitleNameClass?: string;
 }) => {
+  const { setData } = useSheets();
   const [copied, setCopied] = useState(false);
 
   const defaultOptions = {
@@ -71,6 +71,11 @@ export const BentoGridItem = ({
     const text = "rafalpompa2000@gmail.com";
     navigator.clipboard.writeText(text);
     setCopied(true);
+
+    setData({
+      isOpen: true,
+      currentSheet: "Contact",
+    });
   };
 
   return (
@@ -130,10 +135,7 @@ export const BentoGridItem = ({
             {description}
           </div>
           <div
-            className={cn(
-              `font-sans text-lg lg:text-3xl max-w-96 font-bold z-50`,
-              customTitleNameClass,
-            )}
+            className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-50`}
           >
             {title}
           </div>
