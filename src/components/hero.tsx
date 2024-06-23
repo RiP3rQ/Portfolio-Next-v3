@@ -1,9 +1,29 @@
+"use client";
+
 import { TextGenerateEffect } from "@/components/ui/Aceternity/TextGenerateEffect";
 import { FaLocationArrow } from "react-icons/fa6";
 import MagicButton from "@/components/ui/Aceternity/MagicButton";
+import { useLocation } from "@/providers/localization-provider";
+import React, { useEffect, useState } from "react";
+import { hero as EnglishHero } from "@/locale/english";
+import { hero as PolishHero } from "@/locale/polish";
 
 type Props = {};
 const Hero = (props: Props) => {
+  const { data } = useLocation();
+  const [fetchedData, setFetchedData] = useState(null);
+
+  useEffect(() => {
+    if (data === "EN") {
+      setFetchedData(EnglishHero);
+    } else {
+      setFetchedData(PolishHero);
+    }
+  }, [data]);
+
+  if (!fetchedData) {
+    return <div>Loading...</div>;
+  }
   return (
     <div className={"pb-20 pt-36 z-40"}>
       <div
@@ -19,24 +39,21 @@ const Hero = (props: Props) => {
       <div className="flex justify-center relative my-20 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-            Fullstack Web Magic with Next.js
+            {fetchedData.subTitle}
           </p>
 
           <TextGenerateEffect
-            words="Building Dynamic, End-to-End Web Solutions"
+            words={fetchedData.mainTitle}
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           />
 
-          <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-xl">
-            Hi! I&apos;m Rafał, a skilled Fullstack Next.js Developer based in
-            Poland. With a passion for transforming innovative ideas into
-            efficient and engaging web applications, I specialize in delivering
-            robust solutions that drive success.
+          <p className="text-center md:tracking-wider text-sm md:text-lg lg:text-xl">
+            {fetchedData.description}
           </p>
 
           {/* TODO: Open contact form */}
           <MagicButton
-            title="Let's connect!"
+            title={fetchedData.button}
             icon={<FaLocationArrow />}
             position="right"
           />

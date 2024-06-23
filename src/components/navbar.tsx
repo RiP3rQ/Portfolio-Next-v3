@@ -17,6 +17,7 @@ import { navbar as PolishNavbar } from "@/locale/polish";
 
 const Navbar = () => {
   // TODO: CONTACT SHEET
+  // TODO: LOADING PROVIDER
   const { data } = useLocation();
   const [fetchedData, setFetchedData] = useState(null);
 
@@ -142,15 +143,7 @@ const Navbar = () => {
                       {fetchedData.ai.dateText}
                     </span>
                   </div>
-
-
-                  function PolishData(prevState: null): null {
-    throw new Error("Function not implemented.");
-}
-             function EnglishData(prevState: null): null {
-    throw new Error("Function not implemented.");
-}
-          </div>
+                </div>
               </div>
             </HoverCardContent>
           </HoverCard>

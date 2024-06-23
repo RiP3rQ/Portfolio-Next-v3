@@ -37,3 +37,75 @@ export const navbar = {
     title: "Kontakt",
   },
 };
+
+export const hero = {
+  subTitle: "TWORZENIE ROZWIĄZAŃ BIZNESOWYCH WRAZ Z NEXT.JS",
+  mainTitle: "Tworzenie Dynamicznych, Kompleksowych Rozwiązań Webowych",
+  description:
+    "Cześć! Jestem Rafał, doświadczony Fullstack Developer Next.js z Polski. Z pasją do przekształcania innowacyjnych pomysłów w efektywne i angażujące aplikacje internetowe, specjalizuję się w dostarczaniu solidnych rozwiązań, które napędzają sukces.",
+  button: "Połączmy się",
+};
+
+export const bentoGrid = [
+  {
+    id: 1,
+    title: "Łączenie Frontendu i Backendu dla Bezproblemowej Integracji",
+    description: "",
+    className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
+    imgClassName: "w-full h-full",
+    titleClassName: "justify-start max-w-full",
+    img: "",
+    spareImg: "",
+  },
+  {
+    id: 2,
+    title: "Przekształcanie Pomysłów w Solidne Rozwiązania Cyfrowe",
+    description: "",
+    className: "lg:col-span-2 md:col-span-3 md:row-span-2",
+    imgClassName: "",
+    titleClassName: "justify-start",
+    img: "",
+    spareImg: "",
+  },
+  {
+    id: 3,
+    title: "Mój stos technologiczny:",
+    description: "Stale staram się go ulepszać",
+    className: "lg:col-span-2 md:col-span-3 md:row-span-2",
+    imgClassName: "",
+    titleClassName: "justify-center",
+    img: "",
+    spareImg: "",
+  },
+  {
+    id: 4,
+    title: "Wspieranie Innowacji Poprzez Ekspercką Wiedzę Full-Stack.",
+    description: "",
+    className: "lg:col-span-2 md:col-span-3 md:row-span-1",
+    imgClassName: "absolute right-0 bottom-0 w-60",
+    titleClassName: "justify-start",
+    img: "/b4.svg",
+    spareImg: "/grid.svg",
+  },
+  {
+    id: 5,
+    title: "Obecnie buduję projekty AI Next i uczę się RUST.",
+    description: "Ciekawostki",
+    className: "md:col-span-3 md:row-span-2",
+    imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
+    titleClassName: "justify-center md:justify-start lg:justify-center",
+    img: "/b5.svg",
+    spareImg: "/grid.svg",
+  },
+  {
+    id: 6,
+    title: "Chcesz rozpocząć projekt razem?",
+    description: "",
+    className: "lg:col-span-2 md:col-span-3 md:row-span-1",
+    imgClassName: "",
+    titleClassName: "justify-center md:max-w-full max-w-60 text-center",
+    img: "",
+    spareImg: "",
+    contantButtonName: "Skopiuj mój e-mail",
+  },
+];

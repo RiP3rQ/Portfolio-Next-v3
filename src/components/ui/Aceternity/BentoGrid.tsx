@@ -44,7 +44,7 @@ export const BentoGridItem = ({
   imgClassName,
   titleClassName,
   spareImg,
-  customTitleNameClass,
+  contantButtonName,
 }: {
   className?: string;
   id: number;
@@ -54,7 +54,7 @@ export const BentoGridItem = ({
   imgClassName?: string;
   titleClassName?: string;
   spareImg?: string;
-  customTitleNameClass?: string;
+  contantButtonName?: string;
 }) => {
   const [copied, setCopied] = useState(false);
 
@@ -70,6 +70,7 @@ export const BentoGridItem = ({
   const handleCopy = () => {
     const text = "rafalpompa2000@gmail.com";
     navigator.clipboard.writeText(text);
+    if (!contantButtonName) return;
     setCopied(true);
   };
 
@@ -130,10 +131,7 @@ export const BentoGridItem = ({
             {description}
           </div>
           <div
-            className={cn(
-              `font-sans text-lg lg:text-3xl max-w-96 font-bold z-50`,
-              customTitleNameClass,
-            )}
+            className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-50`}
           >
             {title}
           </div>
@@ -162,7 +160,7 @@ export const BentoGridItem = ({
               </div>
 
               <MagicButton
-                title={copied ? "Email is Copied!" : "Copy my email address"}
+                title={contantButtonName}
                 icon={<IoCopyOutline />}
                 position="left"
                 handleClick={handleCopy}
