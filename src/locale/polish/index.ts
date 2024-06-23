@@ -109,3 +109,38 @@ export const bentoGrid = [
     contantButtonName: "Skopiuj mój e-mail",
   },
 ];
+
+export const approach = {
+  subTitle: "Mój",
+  mainTitle: "sposób działania",
+  phase1: {
+    title: "Planowanie i Strategia",
+    order: "Krok 1",
+    description:
+      "Będziemy współpracować, aby określić cele Twojej strony internetowej, grupę docelową oraz kluczowe funkcjonalności. Omówimy strukturę strony, nawigację oraz wymagania dotyczące treści.",
+    animationSpeed: 5.1,
+    containerClassName: "bg-emerald-900 rounded-3xl overflow-hidden",
+  },
+  phase2: {
+    title: "Rozwój i Aktualizacja Postępów",
+    order: "Krok 2",
+    description:
+      "Po zatwierdzeniu planu, włączam moją playlistę lofi i wkraczam w kodowanie. Od początkowych szkiców po dopracowany kod, będę informować Cię na każdym etapie postępu.",
+    animationSpeed: 3,
+    containerClassName: "bg-pink-900 rounded-3xl overflow-hidden",
+    colors: [
+      [255, 166, 158],
+      [221, 255, 247],
+    ],
+    dotSize: 2,
+  },
+  phase3: {
+    title: "Rozwój i Uruchomienie",
+    order: "Krok 3",
+    description:
+      "To miejsce, gdzie dzieje się magia! Na podstawie zatwierdzonego projektu przetłumaczę wszystko na funkcjonalny kod, budując Twoją stronę od podstaw.",
+    animationSpeed: 3,
+    containerClassName: "bg-sky-600 rounded-3xl overflow-hidden",
+    colors: [[125, 211, 252]],
+  },
+};
