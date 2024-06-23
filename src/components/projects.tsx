@@ -1,8 +1,8 @@
 "use client";
 
 import { projects } from "@/data";
-import ProjectsTitle from "@/components/projects-title";
-import ProjectItem from "@/components/project-item";
+import ProjectsTitle from "@/components/projects/projects-title";
+import ProjectItem from "@/components/projects/project-item";
 
 const RecentProjects = () => {
   return (

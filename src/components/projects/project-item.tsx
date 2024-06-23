@@ -49,9 +49,10 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { PinContainer } from "@/components/ui/Aceternity/Pin";
 import { FaLocationArrow } from "react-icons/fa6";
-import Image from "next/image";
+import ProjectImage from "@/components/projects/project-image";
+import Link from "next/link";
+import TechnologyIcon from "@/components/projects/technology-icon";
 
 type Props = {
   id: number;
@@ -99,44 +100,24 @@ const ProjectItem = ({ id, title, des, img, iconLists, link }: Props) => {
         <div className="flex items-center justify-between mt-7 mb-3">
           <div className="flex items-center">
             {iconLists.map((icon, index) => (
-              <div
-                key={index}
-                className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
-                style={{
-                  transform: `translateX(-${5 * index + 2}px)`,
-                }}
-              >
-                <img src={icon} alt="icon5" className="p-2" />
-              </div>
+              <TechnologyIcon key={index} icon={icon} index={index} />
             ))}
           </div>
 
-          <div className="flex justify-center items-center">
+          <Link
+            className="flex justify-center items-center cursor-pointer hover:underline"
+            target={"_blank"}
+            href={link}
+          >
             <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-              Check Live Site
+              Check source code
             </p>
             <FaLocationArrow className="ms-3" color="#CBACF9" />
-          </div>
+          </Link>
         </div>
       </div>
       <div className={"sm:w-1/2 w-1/4 h-full flex items-center justify-center"}>
-        <PinContainer title={title} href={link}>
-          <div className="relative flex items-center justify-center w-full overflow-hidden">
-            <div
-              className="relative w-full h-full overflow-hidden lg:rounded-3xl"
-              style={{ backgroundColor: "#13162D" }}
-            >
-              <img src="/bg.png" alt="bgimg" />
-              <Image
-                src={img}
-                alt="project-img"
-                className="hidden sm:block sm:rounded-t-lg z-10"
-                width={400}
-                height={400}
-              />
-            </div>
-          </div>
-        </PinContainer>
+        <ProjectImage img={img} link={link} title={title} />
       </div>
     </motion.div>
   );
