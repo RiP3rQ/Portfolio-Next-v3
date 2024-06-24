@@ -18,6 +18,8 @@ import { navbar as PolishNavbar } from "@/locale/polish";
 const Navbar = () => {
   // TODO: CONTACT SHEET
   // TODO: LOADING PROVIDER
+  // TODO: CHANGE IMAGES TO STATIC
+  // TODO: FINAL TRANSLATIONS
   const { data } = useLocation();
   const [fetchedData, setFetchedData] = useState(null);
 

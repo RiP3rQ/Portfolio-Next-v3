@@ -97,7 +97,6 @@ export const bentoGrid = [
     img: "/b5.svg",
     spareImg: "/grid.svg",
   },
-  // TODO: CHANGE IMAGES
   {
     id: 6,
     title: "Do you want to start a project together?",
