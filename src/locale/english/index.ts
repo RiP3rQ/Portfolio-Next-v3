@@ -111,6 +111,137 @@ export const bentoGrid = [
   },
 ];
 
+export const projects = {
+  title_noColor: "A small selection of",
+  title_color: "recent projects",
+  projects: [
+    {
+      id: 1,
+      title: "AI-Butler",
+      description:
+        "AI-Butler is an innovative project that uses artificial intelligence to act as a virtual assistant. From taking simple notes to providing intelligent insights based on their context. Create notes containing valuable information that the AI will analyze and use its context to create its own answers. If answering questions based on the context of your notes isn't enough, query the OpenAI model directly.",
+      img: "/aibutler.png",
+      iconLists: [
+        {
+          title: "React",
+          description: "React framework",
+          img: "/re.svg",
+        },
+        {
+          title: "React2",
+          description: "React framework2",
+          img: "/re.svg",
+        },
+        {
+          title: "React3",
+          description: "React framework3",
+          img: "/re.svg",
+        },
+        {
+          title: "Reac4t",
+          description: "React framework4",
+          img: "/re.svg",
+        },
+      ],
+      linkText: "Elevate Your Life with AI",
+      link: "https://github.com/RiP3rQ/AI-Butler",
+    },
+    {
+      id: 2,
+      title: "NFT Marketplace",
+      description:
+        "Decentralized platform enabling users to buy, sell, and trade unique digital assets using blockchain technology, ensuring authenticity and ownership through non-fungible tokens (NFTs).",
+      img: "/nft_marketplace.png",
+      iconLists: [
+        {
+          title: "React",
+          description: "React framework",
+          img: "/re.svg",
+        },
+        {
+          title: "React2",
+          description: "React framework2",
+          img: "/re.svg",
+        },
+        {
+          title: "React3",
+          description: "React framework3",
+          img: "/re.svg",
+        },
+        {
+          title: "Reac4t",
+          description: "React framework4",
+          img: "/re.svg",
+        },
+      ],
+      linkText: "Where Art Meets Blockchain",
+      link: "https://github.com/RiP3rQ/NFT-Market-NextJs-V2",
+    },
+    {
+      id: 3,
+      title: "E-learning Platform",
+      description:
+        "An online educational hub facilitating accessible and interactive learning experiences through a user-friendly interface, diverse course offerings, and personalized progress tracking.",
+      img: "/lms.png",
+      iconLists: [
+        {
+          title: "React",
+          description: "React framework",
+          img: "/re.svg",
+        },
+        {
+          title: "React2",
+          description: "React framework2",
+          img: "/re.svg",
+        },
+        {
+          title: "React3",
+          description: "React framework3",
+          img: "/re.svg",
+        },
+        {
+          title: "Reac4t",
+          description: "React framework4",
+          img: "/re.svg",
+        },
+      ],
+      linkText: "Unlock Your Learning Potential",
+      link: "https://github.com/RiP3rQ/Learning-Platform-NextJS",
+    },
+    {
+      id: 4,
+      title: "Taskify",
+      description:
+        "Fullstack NextJs 14 taskify app allowing users to create boards with lists and cards that can speed up process of developing software or just to create notes. This app allows users to organize lists and cards using the Drag n' Drop feature.",
+      img: "/taskify.png",
+      iconLists: [
+        {
+          title: "React",
+          description: "React framework",
+          img: "/re.svg",
+        },
+        {
+          title: "React2",
+          description: "React framework2",
+          img: "/re.svg",
+        },
+        {
+          title: "React3",
+          description: "React framework3",
+          img: "/re.svg",
+        },
+        {
+          title: "Reac4t",
+          description: "React framework4",
+          img: "/re.svg",
+        },
+      ],
+      linkText: "Achieve More with Less Effort",
+      link: "https://github.com/RiP3rQ/Trello-Clone-NextJs-",
+    },
+  ],
+};
+
 export const approach = {
   subTitle: "My",
   mainTitle: "approach",
