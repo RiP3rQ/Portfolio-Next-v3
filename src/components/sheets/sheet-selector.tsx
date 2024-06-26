@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { useSheets } from "@/providers/sheet-provider";
 import React from "react";
 import { cn } from "@/lib/utils";
+import { Separator } from "@/components/ui/separator";
 
 type Props = {};
 const SheetSelector = (props: Props) => {
@@ -30,6 +31,7 @@ const SheetSelector = (props: Props) => {
           </Badge>
         ))}
       </div>
+      <Separator className={"mt-2"} />
     </div>
   );
 };

@@ -18,11 +18,10 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { FaPaperPlane } from "react-icons/fa";
-import { sendEmail } from "@/actions/send-email";
-import { CustomInput } from "@/components/ui/Aceternity/CustomInput";
-import { CustomTextarea } from "@/components/ui/Aceternity/CustomTextArea";
 import { Separator } from "@/components/ui/separator";
 import SheetSelector from "@/components/sheets/sheet-selector";
+import { PlaceholdersAndVanishInput } from "@/components/ui/Aceternity/PlaceholdersAndVanishInput";
+import { PlaceholdersAndVanishTextArea } from "@/components/ui/Aceternity/PlaceholdersAndVanishTextArea";
 
 const formSchema = z.object({
   email: z.string().email({
@@ -39,8 +38,8 @@ const formSchema = z.object({
     .min(2, {
       message: "Twoja wiadomość musi mieć conajmniej 2 znaki!",
     })
-    .max(2500, {
-      message: "Twoja wiadomość musi mieć mniej niż 2500 znaków!",
+    .max(250, {
+      message: "Twoja wiadomość musi mieć mniej niż 250 znaków!",
     }),
 });
 
@@ -58,18 +57,21 @@ const EmailSheetContent = (props: Props) => {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     const notification = toast.loading("Wysyłam wiadomość...");
 
-    const { data, error } = await sendEmail({
-      email: values.email,
-      title: values.title,
-      message: values.message,
-    });
+    console.log("Email: ", values);
 
-    if (error) {
-      toast.error("Coś poszło nie tak. Spróbuj ponownie później.", {
-        id: notification,
-      });
-      return;
-    }
+    // TODO: UNCOMMENT LATER
+    // const { data, error } = await sendEmail({
+    //   email: values.email,
+    //   title: values.title,
+    //   message: values.message,
+    // });
+
+    // if (error) {
+    //   toast.error("Coś poszło nie tak. Spróbuj ponownie później.", {
+    //     id: notification,
+    //   });
+    //   return;
+    // }
 
     toast.success("Wiadomość wysłana pomyślnie!", {
       id: notification,
@@ -77,9 +79,32 @@ const EmailSheetContent = (props: Props) => {
     form.reset();
   }
 
-  // TODO: SIGNS COUNTER /2500 limit
   // TODO: SHEET SCROLLABLE
   // TODO: PROPER SEND EMAIL HANDLING
+
+  const placeholders = [
+    "Type your message here",
+    "What's on your mind?",
+    "How can we help you?",
+    "What can we do for you?",
+    "What's your question?",
+    "What's your feedback?",
+    "What's your suggestion?",
+    "What's your opinion?",
+    "What's your concern?",
+    "What's your idea?",
+    "What's your request?",
+    "What's your thought?",
+    "What's your comment?",
+    "What's your query?",
+    "What's your problem?",
+    "What's your issue?",
+    "What's your answer?",
+    "What's your inquiry?",
+    "What's your input?",
+    "What's your response?",
+    "What's your review",
+  ];
 
   return (
     <SheetContent>
@@ -103,10 +128,11 @@ const EmailSheetContent = (props: Props) => {
               <FormItem className="w-full">
                 <FormLabel htmlFor={"title"}>Tytuł:</FormLabel>
                 <FormControl>
-                  <CustomInput
+                  <PlaceholdersAndVanishInput
                     id={"title"}
                     type={"text"}
-                    placeholder="Message title"
+                    max={50}
+                    placeholders={placeholders}
                     {...field}
                   />
                 </FormControl>
@@ -122,10 +148,10 @@ const EmailSheetContent = (props: Props) => {
               <FormItem className="w-full">
                 <FormLabel htmlFor={"email"}>Email:</FormLabel>
                 <FormControl>
-                  <CustomInput
+                  <PlaceholdersAndVanishInput
                     id={"email"}
-                    type={"email"}
-                    placeholder="Your@email.com"
+                    type={"text"}
+                    placeholders={["essa", "bessa"]}
                     {...field}
                   />
                 </FormControl>
@@ -141,10 +167,11 @@ const EmailSheetContent = (props: Props) => {
               <FormItem className="w-full">
                 <FormLabel>Message:</FormLabel>
                 <FormControl>
-                  <CustomTextarea
-                    placeholder="Content of your message"
+                  <PlaceholdersAndVanishTextArea
+                    placeholders={["essa", "bessa"]}
                     {...field}
-                    rows={7}
+                    rows={10}
+                    maxLength={250}
                   />
                 </FormControl>
                 <FormMessage />
