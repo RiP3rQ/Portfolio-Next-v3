@@ -22,6 +22,9 @@ import { Separator } from "@/components/ui/separator";
 import SheetSelector from "@/components/sheets/sheet-selector";
 import { PlaceholdersAndVanishInput } from "@/components/ui/Aceternity/PlaceholdersAndVanishInput";
 import { PlaceholdersAndVanishTextArea } from "@/components/ui/Aceternity/PlaceholdersAndVanishTextArea";
+import { X } from "lucide-react";
+import { MultiStepLoader } from "@/components/ui/Aceternity/MultiStepLoader";
+import { useState } from "react";
 
 const formSchema = z.object({
   email: z.string().email({
@@ -43,6 +46,57 @@ const formSchema = z.object({
     }),
 });
 
+const placeholders = [
+  "Type your message here",
+  "What's on your mind?",
+  "How can we help you?",
+  "What can we do for you?",
+  "What's your question?",
+  "What's your feedback?",
+  "What's your suggestion?",
+  "What's your opinion?",
+  "What's your concern?",
+  "What's your idea?",
+  "What's your request?",
+  "What's your thought?",
+  "What's your comment?",
+  "What's your query?",
+  "What's your problem?",
+  "What's your issue?",
+  "What's your answer?",
+  "What's your inquiry?",
+  "What's your input?",
+  "What's your response?",
+  "What's your review",
+];
+
+const loadingStates = [
+  {
+    text: "Buying a condo",
+  },
+  {
+    text: "Travelling in a flight",
+  },
+  {
+    text: "Meeting Tyler Durden",
+  },
+  {
+    text: "He makes soap",
+  },
+  {
+    text: "We goto a bar",
+  },
+  {
+    text: "Start a fight",
+  },
+  {
+    text: "We like it",
+  },
+  {
+    text: "Welcome to F**** C***",
+  },
+];
+
 type Props = {};
 const EmailSheetContent = (props: Props) => {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -53,8 +107,10 @@ const EmailSheetContent = (props: Props) => {
       message: "",
     },
   });
+  const [loading, setLoading] = useState(false);
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    setLoading(true);
     const notification = toast.loading("Wysyłam wiadomość...");
 
     console.log("Email: ", values);
@@ -73,41 +129,35 @@ const EmailSheetContent = (props: Props) => {
     //   return;
     // }
 
-    toast.success("Wiadomość wysłana pomyślnie!", {
-      id: notification,
-    });
-    form.reset();
+    setTimeout(() => {
+      setLoading(false);
+      toast.success("Wiadomość wysłana pomyślnie!", {
+        id: notification,
+      });
+      form.reset();
+    }, 6000);
   }
 
   // TODO: SHEET SCROLLABLE
   // TODO: PROPER SEND EMAIL HANDLING
 
-  const placeholders = [
-    "Type your message here",
-    "What's on your mind?",
-    "How can we help you?",
-    "What can we do for you?",
-    "What's your question?",
-    "What's your feedback?",
-    "What's your suggestion?",
-    "What's your opinion?",
-    "What's your concern?",
-    "What's your idea?",
-    "What's your request?",
-    "What's your thought?",
-    "What's your comment?",
-    "What's your query?",
-    "What's your problem?",
-    "What's your issue?",
-    "What's your answer?",
-    "What's your inquiry?",
-    "What's your input?",
-    "What's your response?",
-    "What's your review",
-  ];
-
   return (
     <SheetContent>
+      {/* Core Loader Modal */}
+      <MultiStepLoader
+        loadingStates={loadingStates}
+        loading={loading}
+        duration={1000}
+        loop={false}
+      />
+      {loading && (
+        <button
+          className="fixed top-4 right-4 text-black dark:text-white z-[120]"
+          onClick={() => setLoading(false)}
+        >
+          <X className="h-10 w-10" />
+        </button>
+      )}
       <SheetSelector />
       <SheetHeader className={"mb-2"}>
         <SheetTitle>Send me an email</SheetTitle>
