@@ -204,7 +204,7 @@ const PlaceholdersAndVanishTextArea = React.forwardRef<
             isOverLimit && "focus-visible:ring-red-500 border-red-500",
           )}
         />
-        <div className="absolute right-2 bottom-2 text-gray-500 text-sm z-[999]">
+        <div className="absolute right-2 bottom-2 text-gray-500 text-sm z-[99]">
           <span className={cn(isOverLimit && "text-red-500")}>
             {value.length}
           </span>

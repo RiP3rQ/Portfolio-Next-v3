@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { toast } from "sonner";
 import {
   Form,
   FormControl,
@@ -25,6 +24,8 @@ import { PlaceholdersAndVanishTextArea } from "@/components/ui/Aceternity/Placeh
 import { X } from "lucide-react";
 import { MultiStepLoader } from "@/components/ui/Aceternity/MultiStepLoader";
 import { useState } from "react";
+import { Vortex } from "@/components/ui/Aceternity/Vortex";
+import { useSheets } from "@/providers/sheet-provider";
 
 const formSchema = z.object({
   email: z.string().email({
@@ -99,6 +100,7 @@ const loadingStates = [
 
 type Props = {};
 const EmailSheetContent = (props: Props) => {
+  const { setData } = useSheets();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -108,12 +110,10 @@ const EmailSheetContent = (props: Props) => {
     },
   });
   const [loading, setLoading] = useState(false);
+  const [doneSending, setDoneSending] = useState(false);
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setLoading(true);
-    const notification = toast.loading("Wysyłam wiadomość...");
-
-    console.log("Email: ", values);
 
     // TODO: UNCOMMENT LATER
     // const { data, error } = await sendEmail({
@@ -121,7 +121,6 @@ const EmailSheetContent = (props: Props) => {
     //   title: values.title,
     //   message: values.message,
     // });
-
     // if (error) {
     //   toast.error("Coś poszło nie tak. Spróbuj ponownie później.", {
     //     id: notification,
@@ -131,15 +130,12 @@ const EmailSheetContent = (props: Props) => {
 
     setTimeout(() => {
       setLoading(false);
-      toast.success("Wiadomość wysłana pomyślnie!", {
-        id: notification,
-      });
+      setDoneSending(true);
       form.reset();
     }, 6000);
   }
 
   // TODO: SHEET SCROLLABLE
-  // TODO: PROPER SEND EMAIL HANDLING
 
   return (
     <SheetContent>
@@ -150,6 +146,42 @@ const EmailSheetContent = (props: Props) => {
         duration={1000}
         loop={false}
       />
+      {/* Vortex effect */}
+      {doneSending && (
+        <Vortex className="fixed inset-0 flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full">
+          <h2 className="text-white text-2xl md:text-6xl font-bold text-center">
+            Thanks for your message!
+          </h2>
+          <p className="text-white text-sm md:text-2xl max-w-xl mt-6 text-center">
+            I will get back to you as soon as possible. In the meantime, feel
+            free to browse around the website or check out the link for my
+            latest project.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
+            <a
+              href={"https://youtu.be/dQw4w9WgXcQ?si=pmKt6kDKY6t-DL3z"}
+              target={"_blank"}
+            >
+              <Button
+                variant={"link"}
+                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 transition duration-200 rounded-lg text-white shadow-[0px_2px_0px_0px_#FFFFFF40_inset]"
+              >
+                Check out my latest project
+              </Button>
+            </a>
+            <Button
+              className="px-4 py-2  text-white"
+              variant={"ghost"}
+              onClick={() => {
+                setDoneSending(false);
+                setData({ isOpen: false, currentSheet: "Contact" });
+              }}
+            >
+              Go to homepage
+            </Button>
+          </div>
+        </Vortex>
+      )}
       {loading && (
         <button
           className="fixed top-4 right-4 text-black dark:text-white z-[120]"
