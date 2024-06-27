@@ -131,8 +131,12 @@ const EmailSheetContent = (props: Props) => {
     setTimeout(() => {
       setLoading(false);
       setDoneSending(true);
-      form.reset();
     }, 6000);
+  }
+
+  async function handleCloseVortex() {
+    setDoneSending(false);
+    form.reset();
   }
 
   // TODO: SHEET SCROLLABLE
@@ -172,12 +176,9 @@ const EmailSheetContent = (props: Props) => {
             <Button
               className="px-4 py-2  text-white"
               variant={"ghost"}
-              onClick={() => {
-                setDoneSending(false);
-                setData({ isOpen: false, currentSheet: "Contact" });
-              }}
+              onClick={handleCloseVortex}
             >
-              Go to homepage
+              Go back
             </Button>
           </div>
         </Vortex>

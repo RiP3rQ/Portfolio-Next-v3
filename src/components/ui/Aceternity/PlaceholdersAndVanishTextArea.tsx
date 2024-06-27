@@ -20,7 +20,6 @@ const PlaceholdersAndVanishTextArea = React.forwardRef<
 >(({ className, placeholders = [], rows, maxLength, ...props }, ref) => {
   const [currentPlaceholder, setCurrentPlaceholder] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
-  const [isOverLimit, setIsOverLimit] = useState(false);
 
   useEffect(() => {
     let interval: any;
@@ -52,9 +51,14 @@ const PlaceholdersAndVanishTextArea = React.forwardRef<
     const computedStyles = getComputedStyle(inputRef.current);
 
     const fontSize = parseFloat(computedStyles.getPropertyValue("font-size"));
-    ctx.font = `${fontSize * 2}px ${computedStyles.fontFamily}`;
+    ctx.font = `${fontSize * 2.8}px ${computedStyles.fontFamily}`;
     ctx.fillStyle = "#FFF";
-    ctx.fillText(value, 16, 40);
+
+    // split after 31 characters
+    const lines = value.match(/.{1,31}/g) || [];
+    lines.forEach((line, index) => {
+      ctx.fillText(line, 16, 40 + index * fontSize * 2.5, 800 - 32);
+    });
 
     const imageData = ctx.getImageData(0, 0, 800, 800);
     const pixelData = imageData.data;
@@ -99,7 +103,7 @@ const PlaceholdersAndVanishTextArea = React.forwardRef<
     const animateFrame = (pos: number = 0) => {
       requestAnimationFrame(() => {
         const newArr = [];
-        for (let i = 0; i < newDataRef.current.length; i++) {
+        for (let i = 0; i < newDataRef.current.length / 4; i++) {
           const current = newDataRef.current[i];
           if (current.x < pos) {
             newArr.push(current);
@@ -138,12 +142,6 @@ const PlaceholdersAndVanishTextArea = React.forwardRef<
       });
     };
     animateFrame(start);
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (e.key === "Enter" && !animating) {
-      vanishAndSubmit();
-    }
   };
 
   const vanishAndSubmit = () => {
@@ -186,26 +184,26 @@ const PlaceholdersAndVanishTextArea = React.forwardRef<
           onChange={(e) => {
             if (!animating) {
               if (e.target.value.length > maxLength) {
-                setIsOverLimit(true);
                 return;
               } else {
-                setIsOverLimit(false);
                 setValue(e.target.value);
                 props.onChange && props.onChange(e);
               }
             }
           }}
-          onKeyDown={handleKeyDown}
           ref={inputRef}
           value={value}
           className={cn(
             "w-full z-10 relative text-black dark:text-white",
             animating && "text-transparent dark:text-transparent",
-            isOverLimit && "focus-visible:ring-red-500 border-red-500",
+            value.length === maxLength &&
+              "focus-visible:ring-red-500 border-red-500",
           )}
+          autoCorrect={"off"}
+          spellCheck={"false"}
         />
         <div className="absolute right-2 bottom-2 text-gray-500 text-sm z-[99]">
-          <span className={cn(isOverLimit && "text-red-500")}>
+          <span className={cn(value.length === maxLength && "text-red-500")}>
             {value.length}
           </span>
           /{maxLength}

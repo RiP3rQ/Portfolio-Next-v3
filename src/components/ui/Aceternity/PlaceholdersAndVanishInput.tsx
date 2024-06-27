@@ -139,12 +139,6 @@ const PlaceholdersAndVanishInput = React.forwardRef<
     animateFrame(start);
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter" && !animating) {
-      vanishAndSubmit();
-    }
-  };
-
   const vanishAndSubmit = () => {
     setAnimating(true);
     draw();
@@ -188,7 +182,6 @@ const PlaceholdersAndVanishInput = React.forwardRef<
             props.onChange && props.onChange(e);
           }
         }}
-        onKeyDown={handleKeyDown}
         ref={inputRef}
         value={value}
         className={cn(
