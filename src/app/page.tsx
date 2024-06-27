@@ -7,7 +7,15 @@ import Footer from "@/components/footer";
 import BlackholeVideo from "@/components/blackhole-video";
 import { TracingBeam } from "@/components/ui/Aceternity/TracingBeam";
 import { LanguageToggle } from "@/components/language/language-toggle";
-import React from "react";
+import React from "react"; // TODO: TRANSALTIONS
+
+// TODO: TRANSALTIONS
+// TODO: AI ASSISNTANT
+// TODO: CONTACT FORM - current
+// TODO: RESEND EMAIL
+// TODO: LOADING EMAIL SEND STATUS
+// TODO: RESPONSIVENESS
+// TODO: MOBILE NAVBAR
 
 export default function Home() {
   return (

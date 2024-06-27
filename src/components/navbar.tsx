@@ -10,12 +10,16 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import Link from "next/link";
+import { useSheets } from "@/providers/sheet-provider";
+import SheetMounted from "@/components/sheets/sheet-main";
 import { useLocation } from "@/providers/localization-provider";
 // import data
 import { navbar as EnglishNavbar } from "@/locale/english";
 import { navbar as PolishNavbar } from "@/locale/polish";
 
 const Navbar = () => {
+  // TODO: STATIC PICTURES FOR LINKS
+  const { setData } = useSheets();
   // TODO: CONTACT SHEET
   // TODO: LOADING PROVIDER
   // TODO: CHANGE IMAGES TO STATIC
@@ -36,8 +40,10 @@ const Navbar = () => {
   }
 
   return (
-    <nav
-      className="sticky top-0 p-0 max-w-full z-[999] xl:items-center
+    <>
+      <SheetMounted />
+      <nav
+        className="sticky top-0 p-0 max-w-full z-[60] xl:items-center
       dark:shadow-lg dark:shadow-[#2a0e61] bg-[#03001417] backdrop-blur-md h-10"
     >
       <div className="max-w-7xl flex items-center justify-between mx-auto max-h-10">
@@ -126,7 +132,12 @@ const Navbar = () => {
           </HoverCard>
           <HoverCard openDelay={0} closeDelay={0}>
             <HoverCardTrigger asChild>
-              <Button variant="link">{fetchedData.ai.title}</Button>
+              <Button variant="link" onClick={() => {
+                  setData({
+                      isOpen: true,
+                      currentSheet: "AI",
+                  });
+              }}>{fetchedData.ai.title}</Button>
             </HoverCardTrigger>
             <HoverCardContent className="w-80">
               <div className="flex justify-between space-x-4">
@@ -149,7 +160,12 @@ const Navbar = () => {
               </div>
             </HoverCardContent>
           </HoverCard>
-          <Button variant={"link"}>{fetchedData.contact.title}</Button>
+          <Button variant={"link"} onClick={() => {
+              setData({
+                  isOpen: true,
+                  currentSheet: "Contact",
+              });
+          }}>{fetchedData.contact.title}</Button>
         </div>
       </div>
     </nav>

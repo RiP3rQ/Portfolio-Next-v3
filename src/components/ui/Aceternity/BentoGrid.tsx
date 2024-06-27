@@ -13,6 +13,7 @@ import MagicButton from "@/components/ui/Aceternity/MagicButton";
 import TechStackMovingLists from "@/components/ui/Aceternity/TechStackMovingLists";
 import { Meteors } from "@/components/ui/Aceternity/Meteors";
 import { GlowingStarsBackgroundCard } from "@/components/ui/Aceternity/GlowingStarts";
+import { useSheets } from "@/providers/sheet-provider";
 
 export const BentoGrid = ({
   className,
@@ -56,6 +57,7 @@ export const BentoGridItem = ({
   spareImg?: string;
   contantButtonName?: string;
 }) => {
+  const { setData } = useSheets();
   const [copied, setCopied] = useState(false);
 
   const defaultOptions = {
@@ -72,6 +74,11 @@ export const BentoGridItem = ({
     navigator.clipboard.writeText(text);
     if (!contantButtonName) return;
     setCopied(true);
+
+    setData({
+      isOpen: true,
+      currentSheet: "Contact",
+    });
   };
 
   return (

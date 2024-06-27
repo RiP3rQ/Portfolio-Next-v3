@@ -7,9 +7,11 @@ import { useLocation } from "@/providers/localization-provider";
 import React, { useEffect, useState } from "react";
 import { hero as EnglishHero } from "@/locale/english";
 import { hero as PolishHero } from "@/locale/polish";
+import { useSheets } from "@/providers/sheet-provider";
 
 type Props = {};
 const Hero = (props: Props) => {
+  const { setData } = useSheets();
   const { data } = useLocation();
   const [fetchedData, setFetchedData] = useState(null);
 
@@ -51,11 +53,16 @@ const Hero = (props: Props) => {
             {fetchedData.description}
           </p>
 
-          {/* TODO: Open contact form */}
           <MagicButton
             title={fetchedData.button}
             icon={<FaLocationArrow />}
             position="right"
+            handleClick={() => {
+              setData({
+                isOpen: true,
+                currentSheet: "Contact",
+              });
+            }}
           />
         </div>
       </div>
