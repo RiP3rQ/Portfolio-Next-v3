@@ -1,9 +1,13 @@
+"use client";
+
 import { TextGenerateEffect } from "@/components/ui/Aceternity/TextGenerateEffect";
 import { FaLocationArrow } from "react-icons/fa6";
 import MagicButton from "@/components/ui/Aceternity/MagicButton";
+import { useSheets } from "@/providers/sheet-provider";
 
 type Props = {};
 const Hero = (props: Props) => {
+  const { setData } = useSheets();
   return (
     <div className={"pb-20 pt-36 z-10"}>
       <div
@@ -34,11 +38,16 @@ const Hero = (props: Props) => {
             robust solutions that drive success.
           </p>
 
-          {/* TODO: Open contact form */}
           <MagicButton
             title="Let's connect!"
             icon={<FaLocationArrow />}
             position="right"
+            handleClick={() => {
+              setData({
+                isOpen: true,
+                currentSheet: "Contact",
+              });
+            }}
           />
         </div>
       </div>

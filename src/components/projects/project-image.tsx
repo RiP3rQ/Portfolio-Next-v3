@@ -19,17 +19,17 @@ const ProjectImage = ({ img, link, title }: Props) => {
             <Image
               src={"/bg.png"}
               alt={"bgimg"}
-              layout={"fill"}
               className={"sm:w-96 w-[80vw] h-[20vh] lg:h-[30vh]"}
+              fill={true}
             />
           </div>
           <Image
             src={img}
             alt={title}
-            layout={"fill"}
             className={
-              "sm:w-96 w-[80vw] h-[20vh] lg:h-[30vh] z-10 absolute bottom-0"
+              "sm:w-96 w-[80vw] h-[20vh] lg:h-[30vh] z-10 absolute bottom-0 object-fill"
             }
+            fill={true}
           />
         </div>
       </PinContainer>

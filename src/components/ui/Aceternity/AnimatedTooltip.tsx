@@ -75,10 +75,9 @@ export const AnimatedTooltip = ({ icon, index, title, description }: Props) => {
       <Image
         src={icon}
         alt={`icon${index}`}
-        className={"p-1 overflow-hidden"}
+        className={"p-1 overflow-hidden object-cover"}
         width={32}
         height={32}
-        layout={"cover"}
       />
     </div>
   );
