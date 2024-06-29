@@ -18,12 +18,7 @@ type Props = {
 };
 
 const Navbar = ({ data }: Props) => {
-  // TODO: STATIC PICTURES FOR LINKS
   const { setData } = useSheets();
-  // TODO: CONTACT SHEET
-  // TODO: LOADING PROVIDER
-  // TODO: CHANGE IMAGES TO STATIC
-  // TODO: FINAL TRANSLATIONS
 
   return (
     <>

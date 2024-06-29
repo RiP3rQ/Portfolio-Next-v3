@@ -139,8 +139,6 @@ const EmailSheetContent = (props: Props) => {
     form.reset();
   }
 
-  // TODO: SHEET SCROLLABLE
-
   return (
     <SheetContent>
       {/* Core Loader Modal */}
