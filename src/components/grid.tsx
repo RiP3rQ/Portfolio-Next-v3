@@ -20,7 +20,7 @@ const Grid = ({ data }: Props) => {
             imgClassName={item.imgClassName}
             titleClassName={item.titleClassName}
             spareImg={item.spareImg}
-            contantButtonName={item?.contantButtonName}
+            contactButtonName={item?.contactButtonName}
           />
         ))}
       </BentoGrid>

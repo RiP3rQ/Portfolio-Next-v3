@@ -5,7 +5,7 @@ export const data = {
       title: "Rafał 'RiP3rQ' Pompa",
       description:
         "Converting concepts into fully realized, end-to-end solutions as a Junior Full Stack Developer.",
-      image: "/hero.png",
+      image: "/avatar.png",
       link: "https://github.com/RiP3rQ",
       dateText: "Developing since February 2020",
     },
@@ -13,7 +13,7 @@ export const data = {
       slug: "Github",
       title: "Github",
       description: "Look at my projects and contributions on Github.",
-      image: "https://github.com/github.png",
+      image: "/socials/git.svg",
       link: "https://github.com/RiP3rQ",
       dateText: "Joined July 2022",
     },
@@ -21,7 +21,7 @@ export const data = {
       slug: "LinkedIn",
       title: "LinkedIn",
       description: "Connect with me on LinkedIn for professional networking.",
-      image: "https://github.com/linkedin.png",
+      image: "/linkedin.png",
       link: "https://www.linkedin.com/in/rafalpompa00/",
       dateText: "Joined December 2023",
     },
@@ -29,7 +29,7 @@ export const data = {
       slug: "Ask AI",
       title: "Ask AI assistant",
       description: "Ask my AI assistant for more information about me.",
-      image: "https://github.com/linkedin.png",
+      image: "/ai.png",
       dateText: "Created July 2024",
     },
     contact: {
@@ -107,7 +107,7 @@ export const data = {
       titleClassName: "justify-center md:max-w-full max-w-60 text-center",
       img: "",
       spareImg: "",
-      contantButtonName: "Copy my email address",
+      contactButtonName: "Copy my email address",
     },
   ],
 
@@ -120,56 +120,66 @@ export const data = {
         title: "AI-Butler",
         description:
           "AI-Butler is an innovative project that uses artificial intelligence to act as a virtual assistant. From taking simple notes to providing intelligent insights based on their context. Create notes containing valuable information that the AI will analyze and use its context to create its own answers. If answering questions based on the context of your notes isn't enough, query the OpenAI model directly.",
-        img: "/aibutler.png",
+        img: "/projects/aibutler.png",
         iconLists: [
           {
-            title: "NEXT.JS",
-            description: "React framework",
+            title: "NEXT",
+            description:
+              "Fullstack framework created by the private company Vercel providing React-based web applications with server-side rendering and static website generation.",
             img: "/technologies/next.svg",
           },
           {
             title: "React",
-            description: "React framework2",
+            description:
+              "A JavaScript library for building user interfaces, particularly single-page applications.",
             img: "/technologies/react.svg",
           },
           {
             title: "TailwindCSS",
-            description: "React framework3",
+            description:
+              "A utility-first CSS framework for rapidly building custom user interfaces.",
             img: "/technologies/tailwind.svg",
           },
           {
             title: "TypeScript",
-            description: "React framework3",
+            description:
+              "A superset of JavaScript that adds static types for better tooling and error checking.",
             img: "/technologies/ts.svg",
           },
           {
             title: "OpenAI",
-            description: "React framework4",
+            description:
+              "An AI research lab providing powerful models like GPT for natural language understanding and generation.",
             img: "/technologies/openai.png",
           },
           {
             title: "PineconeDB",
-            description: "React framework4",
+            description:
+              "A vector database for managing and querying high-dimensional data used in AI applications.",
             img: "/technologies/pinecone.png",
           },
           {
             title: "NeonDB",
-            description: "React framework2",
+            description:
+              "A modern, serverless Postgres database designed for the cloud.",
             img: "/technologies/neon.png",
           },
           {
             title: "DrizzleORM",
-            description: "React framework3",
+            description:
+              "A next-generation ORM that helps build scalable and reliable database applications with ease.",
             img: "/technologies/drizzle.png",
           },
           {
             title: "Shadcn/ui",
-            description: "React framework4",
+            description:
+              "A component library for building UIs with modern design and functionality.",
             img: "/technologies/shadcn.png",
           },
           {
             title: "ClerkAuth",
-            description: "React framework4",
+            description:
+              "An authentication solution that provides secure and scalable user management.",
             img: "/technologies/clerk.svg",
           },
         ],
@@ -181,51 +191,60 @@ export const data = {
         title: "NFT Marketplace",
         description:
           "Decentralized platform enabling users to buy, sell, and trade unique digital assets using blockchain technology, ensuring authenticity and ownership through non-fungible tokens (NFTs).",
-        img: "/nft_marketplace.png",
+        img: "/projects/nft_marketplace.png",
         iconLists: [
           {
             title: "NEXT.JS",
-            description: "React framework",
+            description:
+              "A powerful React framework for server-rendered applications and static websites.",
             img: "/technologies/next.svg",
           },
           {
             title: "React",
-            description: "React framework2",
+            description:
+              "A JavaScript library for building user interfaces, particularly single-page applications.",
             img: "/technologies/react.svg",
           },
           {
             title: "TailwindCSS",
-            description: "React framework3",
+            description:
+              "A utility-first CSS framework for rapidly building custom user interfaces.",
             img: "/technologies/tailwind.svg",
           },
           {
             title: "TypeScript",
-            description: "React framework3",
+            description:
+              "A superset of JavaScript that adds static types for better tooling and error checking.",
             img: "/technologies/ts.svg",
           },
           {
             title: "Thirdweb",
-            description: "React framework4",
+            description:
+              "A development framework for building Web3 applications with ease.",
             img: "/technologies/thirdweb.png",
           },
           {
             title: "MetaMask",
-            description: "React framework4",
+            description:
+              "A cryptocurrency wallet enabling interactions with the Ethereum blockchain.",
             img: "/technologies/metamask.png",
           },
           {
             title: "Prisma",
-            description: "React framework2",
+            description:
+              "An ORM for TypeScript and JavaScript that provides a type-safe database layer.",
             img: "/technologies/prisma.svg",
           },
           {
             title: "MongoDB",
-            description: "React framework3",
+            description:
+              "A NoSQL database known for its flexibility and scalability in handling large volumes of data.",
             img: "/technologies/mongodb.svg",
           },
           {
             title: "Shadcn/ui",
-            description: "React framework4",
+            description:
+              "A component library for building UIs with modern design and functionality.",
             img: "/technologies/shadcn.png",
           },
         ],
@@ -237,56 +256,66 @@ export const data = {
         title: "E-learning Platform",
         description:
           "An online educational hub facilitating accessible and interactive learning experiences through a user-friendly interface, diverse course offerings, and personalized progress tracking.",
-        img: "/lms.png",
+        img: "/projects/lms.png",
         iconLists: [
           {
             title: "NEXT.JS",
-            description: "React framework",
+            description:
+              "A powerful React framework for server-rendered applications and static websites.",
             img: "/technologies/next.svg",
           },
           {
             title: "React",
-            description: "React framework2",
+            description:
+              "A JavaScript library for building user interfaces, particularly single-page applications.",
             img: "/technologies/react.svg",
           },
           {
             title: "TailwindCSS",
-            description: "React framework3",
+            description:
+              "A utility-first CSS framework for rapidly building custom user interfaces.",
             img: "/technologies/tailwind.svg",
           },
           {
             title: "TypeScript",
-            description: "React framework3",
+            description:
+              "A superset of JavaScript that adds static types for better tooling and error checking.",
             img: "/technologies/ts.svg",
           },
           {
             title: "ClerkAuth",
-            description: "React framework4",
+            description:
+              "An authentication solution that provides secure and scalable user management.",
             img: "/technologies/clerk.svg",
           },
           {
             title: "Prisma",
-            description: "React framework2",
+            description:
+              "An ORM for TypeScript and JavaScript that provides a type-safe database layer.",
             img: "/technologies/prisma.svg",
           },
           {
             title: "MongoDB",
-            description: "React framework3",
+            description:
+              "A NoSQL database known for its flexibility and scalability in handling large volumes of data.",
             img: "/technologies/mongodb.svg",
           },
           {
             title: "Shadcn/ui",
-            description: "React framework4",
+            description:
+              "A component library for building UIs with modern design and functionality.",
             img: "/technologies/shadcn.png",
           },
           {
             title: "Stripe",
-            description: "React framework4",
+            description:
+              "A suite of APIs for handling online payments and transactions.",
             img: "/technologies/stripe.svg",
           },
           {
             title: "MUX",
-            description: "React framework4",
+            description:
+              "A platform providing powerful video streaming and analytics tools for developers.",
             img: "/technologies/mux.webp",
           },
         ],
@@ -298,51 +327,60 @@ export const data = {
         title: "Taskify",
         description:
           "Fullstack NextJs 14 taskify app allowing users to create boards with lists and cards that can speed up process of developing software or just to create notes. This app allows users to organize lists and cards using the Drag n' Drop feature.",
-        img: "/taskify.png",
+        img: "/projects/taskify.png",
         iconLists: [
           {
             title: "NEXT.JS",
-            description: "React framework",
+            description:
+              "A powerful React framework for server-rendered applications and static websites.",
             img: "/technologies/next.svg",
           },
           {
             title: "React",
-            description: "React framework2",
+            description:
+              "A JavaScript library for building user interfaces, particularly single-page applications.",
             img: "/technologies/react.svg",
           },
           {
             title: "TailwindCSS",
-            description: "React framework3",
+            description:
+              "A utility-first CSS framework for rapidly building custom user interfaces.",
             img: "/technologies/tailwind.svg",
           },
           {
             title: "TypeScript",
-            description: "React framework3",
+            description:
+              "A superset of JavaScript that adds static types for better tooling and error checking.",
             img: "/technologies/ts.svg",
           },
           {
             title: "ClerkAuth",
-            description: "React framework4",
+            description:
+              "An authentication solution that provides secure and scalable user management.",
             img: "/technologies/clerk.svg",
           },
           {
             title: "Prisma",
-            description: "React framework2",
+            description:
+              "An ORM for TypeScript and JavaScript that provides a type-safe database layer.",
             img: "/technologies/prisma.svg",
           },
           {
             title: "PlanetScale",
-            description: "React framework3",
+            description:
+              "A serverless database platform designed for modern applications.",
             img: "/technologies/planetscale.jpg",
           },
           {
             title: "Shadcn/ui",
-            description: "React framework4",
+            description:
+              "A component library for building UIs with modern design and functionality.",
             img: "/technologies/shadcn.png",
           },
           {
             title: "Stripe",
-            description: "React framework4",
+            description:
+              "A suite of APIs for handling online payments and transactions.",
             img: "/technologies/stripe.svg",
           },
         ],

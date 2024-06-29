@@ -5,7 +5,7 @@ export const data = {
       title: "Rafał 'RiP3rQ' Pompa",
       description:
         "Przekształcanie koncepcji w pełni funkcjonalne, kompleksowe rozwiązania jako Programista Full-Stack.",
-      image: "/hero.png",
+      image: "/avatar.png",
       link: "https://github.com/RiP3rQ",
       dateText: "Tworzenie oprogramowania od lutego 2020",
     },
@@ -13,7 +13,7 @@ export const data = {
       slug: "Github",
       title: "Github",
       description: "Zobacz moje projekty i wkład na Githubie.",
-      image: "https://github.com/github.png",
+      image: "/socials/git.svg",
       link: "https://github.com/RiP3rQ",
       dateText: "Dołączył w lipcu 2022",
     },
@@ -22,7 +22,7 @@ export const data = {
       title: "LinkedIn",
       description:
         "Połącz się ze mną na LinkedIn w celu nawiązania kontaktów zawodowych.",
-      image: "https://github.com/linkedin.png",
+      image: "/linkedin.png",
       link: "https://www.linkedin.com/in/rafalpompa00/",
       dateText: "Dołączył w grudniu 2023",
     },
@@ -30,7 +30,7 @@ export const data = {
       slug: "Zapytaj AI",
       title: "Zapytaj AI asystenta",
       description: "Zapytaj mojego asystenta AI o więcej informacji o mnie.",
-      image: "https://github.com/linkedin.png",
+      image: "/ai.png",
       dateText: "Utworzony w lipcu 2024",
     },
     contact: {
@@ -107,7 +107,7 @@ export const data = {
       titleClassName: "justify-center md:max-w-full max-w-60 text-center",
       img: "",
       spareImg: "",
-      contantButtonName: "Skopiuj mój e-mail",
+      contactButtonName: "Skopiuj mój e-mail",
     },
   ],
 
@@ -120,27 +120,66 @@ export const data = {
         title: "AI-Butler",
         description:
           "AI-Butler to innowacyjny projekt, który wykorzystuje sztuczną inteligencję jako wirtualnego asystenta. Od prostego notowania po dostarczanie inteligentnych wniosków na podstawie kontekstu. Tworzy notatki zawierające wartościowe informacje, które AI analizuje i wykorzystuje ich kontekst do tworzenia własnych odpowiedzi. Jeśli odpowiadanie na pytania na podstawie kontekstu notatek to za mało, możesz bezpośrednio zapytać model OpenAI.",
-        img: "/aibutler.png",
+        img: "/projects/aibutler.png",
         iconLists: [
           {
+            title: "NEXT.JS",
+            description:
+              "Potężny framework React do aplikacji renderowanych po stronie serwera i stron statycznych.",
+            img: "/technologies/next.svg",
+          },
+          {
             title: "React",
-            description: "Framework React",
-            img: "/react.svg",
+            description:
+              "Biblioteka JavaScript do budowania interfejsów użytkownika.",
+            img: "/technologies/react.svg",
           },
           {
-            title: "React2",
-            description: "Framework React2",
-            img: "/react.svg",
+            title: "TailwindCSS",
+            description:
+              "Framework CSS umożliwiający szybkie tworzenie stylów za pomocą klas narzędziowych.",
+            img: "/technologies/tailwind.svg",
           },
           {
-            title: "React3",
-            description: "Framework React3",
-            img: "/react.svg",
+            title: "TypeScript",
+            description:
+              "Język programowania będący nadzbiorem JavaScript, oferujący statyczne typowanie.",
+            img: "/technologies/ts.svg",
           },
           {
-            title: "React4",
-            description: "Framework React4",
-            img: "/react.svg",
+            title: "OpenAI",
+            description:
+              "Laboratorium badawcze oferujące zaawansowane modele AI do analizy i generowania języka naturalnego.",
+            img: "/technologies/openai.png",
+          },
+          {
+            title: "PineconeDB",
+            description:
+              "Baza danych wektorowych do przechowywania i wyszukiwania danych wysokowymiarowych.",
+            img: "/technologies/pinecone.png",
+          },
+          {
+            title: "NeonDB",
+            description:
+              "Nowoczesna, bezserwerowa baza danych Postgres zaprojektowana dla chmury.",
+            img: "/technologies/neon.png",
+          },
+          {
+            title: "DrizzleORM",
+            description:
+              "ORM dla TypeScript i JavaScript zapewniający bezpieczną warstwę dostępu do bazy danych.",
+            img: "/technologies/drizzle.png",
+          },
+          {
+            title: "Shadcn/ui",
+            description: "Biblioteka komponentów UI z nowoczesnym designem.",
+            img: "/technologies/shadcn.png",
+          },
+          {
+            title: "ClerkAuth",
+            description:
+              "Rozwiązanie do zarządzania uwierzytelnianiem użytkowników, zapewniające bezpieczeństwo i skalowalność.",
+            img: "/technologies/clerk.svg",
           },
         ],
         linkText: "Podnieś swoje życie z AI",
@@ -151,27 +190,59 @@ export const data = {
         title: "NFT Marketplace",
         description:
           "Zdecentralizowana platforma umożliwiająca użytkownikom kupowanie, sprzedawanie i wymianę unikalnych aktywów cyfrowych przy użyciu technologii blockchain, zapewniająca autentyczność i własność poprzez tokeny niewymienne (NFT).",
-        img: "/nft_marketplace.png",
+        img: "/projects/nft_marketplace.png",
         iconLists: [
           {
+            title: "NEXT.JS",
+            description:
+              "Potężny framework React do aplikacji renderowanych po stronie serwera i stron statycznych.",
+            img: "/technologies/next.svg",
+          },
+          {
             title: "React",
-            description: "Framework React",
-            img: "/react.svg",
+            description:
+              "Biblioteka JavaScript do budowania interfejsów użytkownika.",
+            img: "/technologies/react.svg",
           },
           {
-            title: "React2",
-            description: "Framework React2",
-            img: "/react.svg",
+            title: "TailwindCSS",
+            description:
+              "Framework CSS umożliwiający szybkie tworzenie stylów za pomocą klas narzędziowych.",
+            img: "/technologies/tailwind.svg",
           },
           {
-            title: "React3",
-            description: "Framework React3",
-            img: "/react.svg",
+            title: "TypeScript",
+            description:
+              "Język programowania będący nadzbiorem JavaScript, oferujący statyczne typowanie.",
+            img: "/technologies/ts.svg",
           },
           {
-            title: "React4",
-            description: "Framework React4",
-            img: "/react.svg",
+            title: "Thirdweb",
+            description:
+              "Framework do tworzenia aplikacji Web3, ułatwiający integrację z blockchain.",
+            img: "/technologies/thirdweb.png",
+          },
+          {
+            title: "MetaMask",
+            description:
+              "Portfel kryptowalutowy umożliwiający interakcje z blockchainem Ethereum.",
+            img: "/technologies/metamask.png",
+          },
+          {
+            title: "Prisma",
+            description:
+              "Nowoczesny ORM wspierający budowanie skalowalnych aplikacji bazodanowych.",
+            img: "/technologies/prisma.svg",
+          },
+          {
+            title: "MongoDB",
+            description: "Elastyczna i skalowalna baza danych NoSQL.",
+            img: "/technologies/mongodb.svg",
+          },
+          {
+            title: "Shadcn/ui",
+            description: "Biblioteka komponentów UI z nowoczesnym designem.",
+            img: "/technologies/shadcn.png",
           },
         ],
         linkText: "Gdzie sztuka spotyka blockchain",
@@ -182,27 +253,64 @@ export const data = {
         title: "Platforma e-learningowa",
         description:
           "Internetowe centrum edukacyjne ułatwiające dostępne i interaktywne doświadczenia edukacyjne poprzez przyjazny interfejs, różnorodność oferowanych kursów i spersonalizowane śledzenie postępów.",
-        img: "/lms.png",
+        img: "/projects/lms.png",
         iconLists: [
           {
+            title: "NEXT.JS",
+            description:
+              "Potężny framework React do aplikacji renderowanych po stronie serwera i stron statycznych.",
+            img: "/technologies/next.svg",
+          },
+          {
             title: "React",
-            description: "Framework React",
-            img: "/react.svg",
+            description:
+              "Biblioteka JavaScript do budowania interfejsów użytkownika.",
+            img: "/technologies/react.svg",
           },
           {
-            title: "React2",
-            description: "Framework React2",
-            img: "/react.svg",
+            title: "TailwindCSS",
+            description:
+              "Framework CSS umożliwiający szybkie tworzenie stylów za pomocą klas narzędziowych.",
+            img: "/technologies/tailwind.svg",
           },
           {
-            title: "React3",
-            description: "Framework React3",
-            img: "/react.svg",
+            title: "TypeScript",
+            description:
+              "Język programowania będący nadzbiorem JavaScript, oferujący statyczne typowanie.",
+            img: "/technologies/ts.svg",
           },
           {
-            title: "React4",
-            description: "Framework React4",
-            img: "/react.svg",
+            title: "ClerkAuth",
+            description:
+              "Rozwiązanie do zarządzania uwierzytelnianiem użytkowników, zapewniające bezpieczeństwo i skalowalność.",
+            img: "/technologies/clerk.svg",
+          },
+          {
+            title: "Prisma",
+            description:
+              "Nowoczesny ORM wspierający budowanie skalowalnych aplikacji bazodanowych.",
+            img: "/technologies/prisma.svg",
+          },
+          {
+            title: "MongoDB",
+            description: "Elastyczna i skalowalna baza danych NoSQL.",
+            img: "/technologies/mongodb.svg",
+          },
+          {
+            title: "Shadcn/ui",
+            description: "Biblioteka komponentów UI z nowoczesnym designem.",
+            img: "/technologies/shadcn.png",
+          },
+          {
+            title: "Stripe",
+            description: "Zestaw API do obsługi płatności online.",
+            img: "/technologies/stripe.svg",
+          },
+          {
+            title: "MUX",
+            description:
+              "Platforma oferująca narzędzia do streamingu wideo i analityki.",
+            img: "/technologies/mux.webp",
           },
         ],
         linkText: "Odblokuj swój potencjał edukacyjny",
@@ -213,27 +321,59 @@ export const data = {
         title: "Taskify",
         description:
           "Pełnostackowa aplikacja NextJs 14 Taskify pozwalająca użytkownikom tworzyć tablice z listami i kartami, które mogą przyspieszyć proces tworzenia oprogramowania lub po prostu tworzyć notatki. Ta aplikacja pozwala użytkownikom organizować listy i karty za pomocą funkcji przeciągnij i upuść.",
-        img: "/taskify.png",
+        img: "/projects/taskify.png",
         iconLists: [
           {
+            title: "NEXT.JS",
+            description:
+              "Potężny framework React do aplikacji renderowanych po stronie serwera i stron statycznych.",
+            img: "/technologies/next.svg",
+          },
+          {
             title: "React",
-            description: "Framework React",
-            img: "/react.svg",
+            description:
+              "Biblioteka JavaScript do budowania interfejsów użytkownika.",
+            img: "/technologies/react.svg",
           },
           {
-            title: "React2",
-            description: "Framework React2",
-            img: "/react.svg",
+            title: "TailwindCSS",
+            description:
+              "Framework CSS umożliwiający szybkie tworzenie stylów za pomocą klas narzędziowych.",
+            img: "/technologies/tailwind.svg",
           },
           {
-            title: "React3",
-            description: "Framework React3",
-            img: "/react.svg",
+            title: "TypeScript",
+            description:
+              "Język programowania będący nadzbiorem JavaScript, oferujący statyczne typowanie.",
+            img: "/technologies/ts.svg",
           },
           {
-            title: "React4",
-            description: "Framework React4",
-            img: "/react.svg",
+            title: "ClerkAuth",
+            description:
+              "Rozwiązanie do zarządzania uwierzytelnianiem użytkowników, zapewniające bezpieczeństwo i skalowalność.",
+            img: "/technologies/clerk.svg",
+          },
+          {
+            title: "Prisma",
+            description:
+              "Nowoczesny ORM wspierający budowanie skalowalnych aplikacji bazodanowych.",
+            img: "/technologies/prisma.svg",
+          },
+          {
+            title: "PlanetScale",
+            description:
+              "Bezserwerowa platforma bazodanowa zaprojektowana dla nowoczesnych aplikacji.",
+            img: "/technologies/planetscale.jpg",
+          },
+          {
+            title: "Shadcn/ui",
+            description: "Biblioteka komponentów UI z nowoczesnym designem.",
+            img: "/technologies/shadcn.png",
+          },
+          {
+            title: "Stripe",
+            description: "Zestaw API do obsługi płatności online.",
+            img: "/technologies/stripe.svg",
           },
         ],
         linkText: "Osiągnij więcej przy mniejszym wysiłku",
