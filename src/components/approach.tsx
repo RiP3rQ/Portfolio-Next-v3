@@ -1,66 +1,49 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
-
 import { CanvasRevealEffect } from "@/components/ui/Aceternity/CanvasRevealEffect";
-import { useLocation } from "@/providers/localization-provider";
-import { approach as EnglishApproach } from "@/locale/english";
-import { approach as PolishApproach } from "@/locale/polish";
 
-const Approach = () => {
-  const { data } = useLocation();
-  const [fetchedData, setFetchedData] = useState<typeof EnglishApproach>(null);
+type Props = {
+  data: typeof import("@/locale/english").data.approach;
+};
 
-  useEffect(() => {
-    if (data === "EN") {
-      setFetchedData(EnglishApproach);
-    } else {
-      setFetchedData(PolishApproach);
-    }
-  }, [data]);
-
-  if (!fetchedData) {
-    return <div>Loading...</div>;
-  }
+const Approach = ({ data }: Props) => {
   return (
     <section className="w-full py-20">
       <h1 className="font-bold text-4xl md:text-5xl text-center">
-        {fetchedData.subTitle}{" "}
-        <span className="text-[#CBACF9]">{fetchedData.mainTitle}</span>
+        {data.subTitle} <span className="text-[#CBACF9]">{data.mainTitle}</span>
       </h1>
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-6 lg:gap-4">
         <Card
-          title={fetchedData.phase1.title}
-          icon={<AceternityIcon order={fetchedData.phase1.order} />}
-          des={fetchedData.phase1.description}
+          title={data.phase1.title}
+          icon={<AceternityIcon order={data.phase1.order} />}
+          des={data.phase1.description}
         >
           <CanvasRevealEffect
-            animationSpeed={fetchedData.phase1.animationSpeed}
-            containerClassName={fetchedData.phase1.containerClassName}
+            animationSpeed={data.phase1.animationSpeed}
+            containerClassName={data.phase1.containerClassName}
           />
         </Card>
         <Card
-          title={fetchedData.phase2.title}
-          icon={<AceternityIcon order={fetchedData.phase2.order} />}
-          des={fetchedData.phase2.description}
+          title={data.phase2.title}
+          icon={<AceternityIcon order={data.phase2.order} />}
+          des={data.phase2.description}
         >
           <CanvasRevealEffect
-            animationSpeed={fetchedData.phase2.animationSpeed}
-            containerClassName={fetchedData.phase2.containerClassName}
-            colors={fetchedData.phase2.colors}
-            dotSize={fetchedData.phase2.dotSize}
+            animationSpeed={data.phase2.animationSpeed}
+            containerClassName={data.phase2.containerClassName}
+            colors={data.phase2.colors}
+            dotSize={data.phase2.dotSize}
           />
         </Card>
         <Card
-          title={fetchedData.phase3.title}
-          icon={<AceternityIcon order={fetchedData.phase3.order} />}
-          des={fetchedData.phase3.description}
+          title={data.phase3.title}
+          icon={<AceternityIcon order={data.phase3.order} />}
+          des={data.phase3.description}
         >
           <CanvasRevealEffect
-            animationSpeed={fetchedData.phase3.animationSpeed}
-            containerClassName={fetchedData.phase3.containerClassName}
-            colors={fetchedData.phase3.colors}
+            animationSpeed={data.phase3.animationSpeed}
+            containerClassName={data.phase3.containerClassName}
+            colors={data.phase3.colors}
           />
         </Card>
       </div>

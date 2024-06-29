@@ -3,29 +3,15 @@
 import { TextGenerateEffect } from "@/components/ui/Aceternity/TextGenerateEffect";
 import { FaLocationArrow } from "react-icons/fa6";
 import MagicButton from "@/components/ui/Aceternity/MagicButton";
-import { useLocation } from "@/providers/localization-provider";
-import React, { useEffect, useState } from "react";
-import { hero as EnglishHero } from "@/locale/english";
-import { hero as PolishHero } from "@/locale/polish";
+import React from "react";
 import { useSheets } from "@/providers/sheet-provider";
 
-type Props = {};
-const Hero = (props: Props) => {
+type Props = {
+  data: typeof import("@/locale/english").data.hero;
+};
+const Hero = ({ data }: Props) => {
   const { setData } = useSheets();
-  const { data } = useLocation();
-  const [fetchedData, setFetchedData] = useState(null);
 
-  useEffect(() => {
-    if (data === "EN") {
-      setFetchedData(EnglishHero);
-    } else {
-      setFetchedData(PolishHero);
-    }
-  }, [data]);
-
-  if (!fetchedData) {
-    return <div>Loading...</div>;
-  }
   return (
     <div className={"pb-20 pt-36 z-40"}>
       <div
@@ -41,20 +27,20 @@ const Hero = (props: Props) => {
       <div className="flex justify-center relative my-20 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-            {fetchedData.subTitle}
+            {data.subTitle}
           </p>
 
           <TextGenerateEffect
-            words={fetchedData.mainTitle}
+            words={data.mainTitle}
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           />
 
           <p className="text-center md:tracking-wider text-sm md:text-lg lg:text-xl">
-            {fetchedData.description}
+            {data.description}
           </p>
 
           <MagicButton
-            title={fetchedData.button}
+            title={data.button}
             icon={<FaLocationArrow />}
             position="right"
             handleClick={() => {

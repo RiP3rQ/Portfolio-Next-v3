@@ -47,6 +47,7 @@ export const AnimatedTooltip = ({ icon, index, title, description }: Props) => {
             initial={{ opacity: 0, y: 20, scale: 0.6 }}
             animate={{
               opacity: 1,
+              x: -20,
               y: 0,
               scale: 1,
               transition: {

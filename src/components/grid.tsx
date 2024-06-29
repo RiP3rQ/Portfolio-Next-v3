@@ -1,30 +1,15 @@
-"use client";
-
 import { BentoGrid, BentoGridItem } from "@/components/ui/Aceternity/BentoGrid";
-import { useLocation } from "@/providers/localization-provider";
-import React, { useEffect, useState } from "react";
-import { bentoGrid as EnglishBentoGrid } from "@/locale/english";
-import { bentoGrid as PolishBentoGrid } from "@/locale/polish";
+import React from "react";
 
-const Grid = () => {
-  const { data } = useLocation();
-  const [fetchedData, setFetchedData] = useState<typeof EnglishBentoGrid>(null);
+type Props = {
+  data: typeof import("@/locale/english").data.bentoGrid;
+};
 
-  useEffect(() => {
-    if (data === "EN") {
-      setFetchedData(EnglishBentoGrid);
-    } else {
-      setFetchedData(PolishBentoGrid);
-    }
-  }, [data]);
-
-  if (!fetchedData) {
-    return <div>Loading...</div>;
-  }
+const Grid = ({ data }: Props) => {
   return (
     <section id="about">
       <BentoGrid className="w-full py-20">
-        {fetchedData.map((item, i) => (
+        {data.map((item, i) => (
           <BentoGridItem
             id={item.id}
             key={i}
