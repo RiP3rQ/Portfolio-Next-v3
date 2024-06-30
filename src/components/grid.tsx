@@ -9,7 +9,7 @@ type Props = {
 const Grid = ({ data }: Props) => {
   return (
     <section id="about">
-      <BentoGrid className="w-full py-20">
+      <BentoGrid className="w-4/5 lg:w-full mx-auto px-0 sm:px-8 md:px-12 3xl:px-0">
         {data.map((item, i) => (
           <BentoGridItem
             id={item.id}

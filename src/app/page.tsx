@@ -13,10 +13,6 @@ import React from "react";
 import { useLocation } from "@/providers/localization-provider";
 import { SheetProvider } from "@/providers/sheet-provider";
 
-// TODO: RESPONSIVENESS
-// TODO: MOBILE NAVBAR
-// TODO: dynamically render globe + magic buttons + everything in sheets
-
 export default function Home() {
   const { pageData, language, setLanguage } = useLocation();
 

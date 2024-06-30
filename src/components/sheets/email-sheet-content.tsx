@@ -25,6 +25,8 @@ import { X } from "lucide-react";
 import { MultiStepLoader } from "@/components/ui/Aceternity/MultiStepLoader";
 import { useState } from "react";
 import { Vortex } from "@/components/ui/Aceternity/Vortex";
+import { sendEmail } from "@/actions/send-email";
+import { toast } from "sonner";
 
 type Props = {
   sheetsData: typeof import("@/locale/english").data.sheets;
@@ -32,9 +34,6 @@ type Props = {
 
 const EmailSheetContent = ({ sheetsData }: Props) => {
   const formSchema = z.object({
-    // email: z.string().email({
-    //   message: "Please enter a valid email address",
-    // }),
     title: z
       .string()
       .min(2, {
@@ -43,14 +42,9 @@ const EmailSheetContent = ({ sheetsData }: Props) => {
       .max(50, {
         message: "Title must be less than 50 characters long",
       }),
-    email: z
-      .string()
-      .min(2, {
-        message: "Title must be at least 2 characters long",
-      })
-      .max(50, {
-        message: "Title must be less than 50 characters long",
-      }),
+    email: z.string().email({
+      message: "Please enter a valid email address",
+    }),
     message: z
       .string()
       .min(2, {
@@ -75,18 +69,16 @@ const EmailSheetContent = ({ sheetsData }: Props) => {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setLoading(true);
 
-    // TODO: UNCOMMENT LATER
-    // const { data, error } = await sendEmail({
-    //   email: values.email,
-    //   title: values.title,
-    //   message: values.message,
-    // });
-    // if (error) {
-    //   toast.error("Coś poszło nie tak. Spróbuj ponownie później.", {
-    //     id: notification,
-    //   });
-    //   return;
-    // }
+    const { data, error } = await sendEmail({
+      email: values.email,
+      title: values.title,
+      message: values.message,
+    });
+    if (error) {
+      console.error(error);
+      toast.error("ERROR! Try again later!");
+      return;
+    }
 
     setTimeout(() => {
       setLoading(false);

@@ -64,7 +64,7 @@ const Navbar = ({ data, sheetsData }: Props) => {
             </HoverCardContent>
           </HoverCard>
           {/*Right*/}
-          <div className="hidden md:flex items-center justify-between text-white max-h-10">
+          <div className="flex items-center justify-between text-white max-h-10">
             <HoverCard openDelay={0} closeDelay={0}>
               <HoverCardTrigger asChild>
                 <Link href={data.github.link} target={"_blank"}>

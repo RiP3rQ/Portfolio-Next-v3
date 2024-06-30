@@ -100,7 +100,7 @@ export const data = {
       titleClassName: "justify-center md:max-w-full max-w-60 text-center",
       img: "",
       spareImg: "",
-      contactButtonName: "Copy my email address",
+      contactButtonName: "Let's connect",
     },
   ],
 
@@ -520,7 +520,7 @@ export const data = {
         {
           title: "What kind of commercial projects have you worked on?",
           message:
-            "In my six months of commercial experience, I have worked on several projects, including developing a dynamic e-commerce platform using Next.js and integrating it with a custom backend. I also contributed to a SaaS application, focusing on enhancing the user interface and optimizing performance.",
+            "In my six months of commercial experience, I have worked on internal company's software projects, including developing a dynamic e-commerce platform using Next.js and integrating it with a custom backend and many serverless services. In my spare time I have also worked on personal projects, such as AI-Butler, a virtual assistant powered by OpenAI.",
         },
         {
           title: "Why did you choose Next.js as your main framework?",
@@ -548,7 +548,7 @@ export const data = {
           title:
             "What have you recently learned, and what technologies or skills are you planning to learn next?",
           message:
-            "Recently, I have focused on improving my skills in TypeScript, which has greatly enhanced the robustness of my code. Next, I plan to delve into GraphQL to better handle complex data fetching requirements and improve the efficiency of my applications.",
+            "Recently, I have focused on improving my skills in TypeScript, which has greatly enhanced the robustness of my code. Next, I plan to dive into RUST to improve my backend development skills and explore new paradigms in programming.",
         },
         {
           title:

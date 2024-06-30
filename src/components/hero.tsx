@@ -35,7 +35,7 @@ const Hero = ({ data }: Props) => {
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           />
 
-          <p className="text-center md:tracking-wider text-sm md:text-lg lg:text-xl">
+          <p className="text-center md:tracking-wider text-sm md:text-lg lg:text-xl mb-10 lg:mb-0">
             {data.description}
           </p>
 

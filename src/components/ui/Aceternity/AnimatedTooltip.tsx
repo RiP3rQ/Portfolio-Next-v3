@@ -35,53 +35,54 @@ export const AnimatedTooltip = ({ icon, index, title, description }: Props) => {
     x.set(event.nativeEvent.offsetX - halfWidth); // set the x value, which is then used in transform and rotate
   };
 
-  const moveLeft = 5 * index + 2;
-
   return (
     <div
       key={index}
       onMouseEnter={() => setHoveredIndex(index)}
       onMouseLeave={() => setHoveredIndex(null)}
     >
-      <AnimatePresence mode="popLayout">
-        {hoveredIndex === index && (
-          <motion.div
-            initial={{ opacity: 0, x: -moveLeft, y: 20, scale: 0.6 }}
-            animate={{
-              opacity: 1,
-              x: -moveLeft,
-              y: 0,
-              scale: 1,
-              transition: {
-                type: "spring",
-                stiffness: 260,
-                damping: 10,
-              },
-            }}
-            exit={{ opacity: 0, x: -moveLeft, y: 20, scale: 0.6 }}
-            style={{
-              translateX: translateX,
-              rotate: rotate,
-              whiteSpace: "nowrap",
-            }}
-            className="absolute -top-16 -left-1/2 translate-x-1/2 flex text-xs  flex-col items-center justify-center rounded-md bg-black z-50 shadow-xl px-4 py-2"
-          >
-            <div className="absolute inset-x-10 z-30 w-[20%] -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px " />
-            <div className="absolute left-0 w-full z-30 -bottom-px bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px " />
-            <div className="font-bold text-white relative z-30 text-base">
-              {title}
-            </div>
-            <div className="text-white text-xs">{description}</div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-      <Image
-        src={icon}
-        alt={`icon${index}`}
-        className={"p-1 overflow-hidden object-cover"}
-        width={32}
-        height={32}
-      />
+      <div className="size-8 rounded-full flex items-center justify-center relative ">
+        <Image
+          onMouseMove={handleMouseMove}
+          src={icon}
+          alt={`icon${index}`}
+          className="object-cover overflow-hidden p-1 rounded-full"
+          width={32}
+          height={32}
+        />
+        <AnimatePresence mode="popLayout">
+          {hoveredIndex === index && (
+            <motion.div
+              initial={{ opacity: 0, y: 20, scale: 0.6 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                transition: {
+                  type: "spring",
+                  stiffness: 260,
+                  damping: 10,
+                },
+              }}
+              exit={{ opacity: 0, y: 20, scale: 0.6 }}
+              style={{
+                translateX: translateX,
+                rotate: rotate,
+                whiteSpace: "nowrap",
+              }}
+              className="absolute bottom-12 left-1/2 transform flex text-xs w-[60vw] md:w-[40vw] xl:w-[20vw] flex-col items-center justify-center rounded-md bg-black z-[123] shadow-xl px-4 py-2"
+            >
+              <div className="absolute inset-x-10 z-30 w-[20%] -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px " />
+              <div className="absolute left-0 w-full z-30 -bottom-px bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px " />
+              <div className="absolute left-0 bottom-[-8px] w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[6px] border-t-emerald-500"></div>
+              <div className="font-bold text-white z-30 text-base">{title}</div>
+              <div className="text-white text-xs w-full h-full whitespace-break-spaces">
+                {description}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </div>
   );
 };

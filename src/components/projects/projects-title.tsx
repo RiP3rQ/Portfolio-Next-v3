@@ -6,7 +6,7 @@ type Props = {
 };
 const ProjectsTitle = ({ title_noColor, title_color }: Props) => {
   return (
-    <div className="max-h-[200px] w-full bg-transparent flex flex-col items-center justify-center overflow-hidden rounded-md">
+    <div className="max-h-[220px] w-full bg-transparent flex flex-col items-center justify-center overflow-hidden rounded-md">
       <h1 className="font-bold text-4xl md:text-5xl text-center">
         {title_noColor} <span className="text-[#CBACF9]">{title_color}</span>
       </h1>

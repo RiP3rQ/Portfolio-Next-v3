@@ -11,7 +11,11 @@ type Props = {
 const FooterButtons = ({ data }: Props) => {
   const { setData } = useSheets();
   return (
-    <div className={"flex w-full items-center justify-center gap-2"}>
+    <div
+      className={
+        "flex mx-auto w-4/5 md:w-full items-center justify-center gap-2"
+      }
+    >
       <MagicButton
         title={data.button}
         icon={<FaLocationArrow />}
