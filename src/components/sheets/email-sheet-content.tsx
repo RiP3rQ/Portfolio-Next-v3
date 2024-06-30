@@ -75,6 +75,7 @@ const EmailSheetContent = ({ sheetsData }: Props) => {
       message: values.message,
     });
     if (error) {
+      console.error(error);
       toast.error("ERROR! Try again later!");
       return;
     }

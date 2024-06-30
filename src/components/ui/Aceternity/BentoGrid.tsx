@@ -122,13 +122,14 @@ export const BentoGridItem = ({
           {id === 4 && <Meteors number={20} />}
           {/* Copy email button */}
           {id === 6 && (
-            <div className="mt-5 relative">
+            <div className="mt-5 relative mx-auto w-4/5">
               <MagicButton
                 title={contactButtonName}
                 icon={<IoCopyOutline />}
                 position="left"
                 handleClick={handleCopy}
                 otherClasses="!bg-[#161A31]"
+                size={"small"}
               />
             </div>
           )}

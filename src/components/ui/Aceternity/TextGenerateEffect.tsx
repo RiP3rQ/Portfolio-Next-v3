@@ -25,8 +25,6 @@ export const TextGenerateEffect = ({
     );
   }, [scope.current, wordsArray]);
 
-  console.log("wordsArray", wordsArray);
-
   const renderWords = () => {
     return (
       <motion.div ref={scope}>
