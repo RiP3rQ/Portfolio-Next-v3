@@ -23,7 +23,9 @@ export const TextGenerateEffect = ({
         delay: stagger(0.2),
       },
     );
-  }, [scope.current]);
+  }, [scope.current, wordsArray]);
+
+  console.log("wordsArray", wordsArray);
 
   const renderWords = () => {
     return (

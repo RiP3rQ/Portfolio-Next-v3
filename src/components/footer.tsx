@@ -1,55 +1,31 @@
 "use client";
-
-import { FaLocationArrow } from "react-icons/fa6";
-
 import { socialMedia } from "@/data";
-import MagicButton from "@/components/ui/Aceternity/MagicButton";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useSheets } from "@/providers/sheet-provider";
-import { AiOutlineQuestion } from "react-icons/ai";
+import FooterButtons from "@/components/footer-buttons";
 
-const Footer = () => {
-  const { setData } = useSheets();
+type Props = {
+  data: typeof import("@/locale/english").data.footer;
+};
+
+const Footer = ({ data }: Props) => {
   return (
     <footer className="w-full pt-20 pb-10" id="contact">
       <div className="flex flex-col items-center">
         <h1 className="font-bold text-4xl md:text-5xl text-center lg:max-w-[45vw]">
-          Ready to take <span className="text-[#CBACF9]">your</span> digital
-          presence to the next level?
+          {data.title_part1}{" "}
+          <span className="text-[#CBACF9]">{data.title_part2}</span>{" "}
+          {data.title_part3}
         </h1>
         <p className="text-white-200 md:mt-10 my-5 text-center">
-          Reach out to me today and let&apos;s discuss how I can help you
-          achieve your goals.
+          {data.description}
         </p>
-        <div className={"flex w-full items-center justify-center gap-2"}>
-          <MagicButton
-            title="Let's get in touch"
-            icon={<FaLocationArrow />}
-            position="left"
-            handleClick={() => {
-              setData({
-                isOpen: true,
-                currentSheet: "Contact",
-              });
-            }}
-          />
-          <MagicButton
-            title="Look at FAQ"
-            icon={<AiOutlineQuestion />}
-            position="right"
-            handleClick={() => {
-              setData({
-                isOpen: true,
-                currentSheet: "FAQ",
-              });
-            }}
-          />
-        </div>
+        <FooterButtons data={data} />
       </div>
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
         <p className="md:text-base text-sm md:font-normal font-light underline underline-offset-1">
-          Handcrafted by RiP3rQ @ 2024
+          {data.autograph}
         </p>
 
         <div className="flex items-center md:gap-3 gap-6 mt-1">

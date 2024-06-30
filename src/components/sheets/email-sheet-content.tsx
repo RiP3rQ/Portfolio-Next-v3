@@ -25,82 +25,42 @@ import { X } from "lucide-react";
 import { MultiStepLoader } from "@/components/ui/Aceternity/MultiStepLoader";
 import { useState } from "react";
 import { Vortex } from "@/components/ui/Aceternity/Vortex";
-import { useSheets } from "@/providers/sheet-provider";
 
-const formSchema = z.object({
-  email: z.string().email({
-    message: "Podaj poprawny adres email.",
-  }),
-  title: z
-    .string()
-    .min(2, {
-      message: "Tytuł twojego email musi mieć conajmniej 2 znaki",
-    })
-    .max(50),
-  message: z
-    .string()
-    .min(2, {
-      message: "Twoja wiadomość musi mieć conajmniej 2 znaki!",
-    })
-    .max(250, {
-      message: "Twoja wiadomość musi mieć mniej niż 250 znaków!",
-    }),
-});
+type Props = {
+  sheetsData: typeof import("@/locale/english").data.sheets;
+};
 
-const placeholders = [
-  "Type your message here",
-  "What's on your mind?",
-  "How can we help you?",
-  "What can we do for you?",
-  "What's your question?",
-  "What's your feedback?",
-  "What's your suggestion?",
-  "What's your opinion?",
-  "What's your concern?",
-  "What's your idea?",
-  "What's your request?",
-  "What's your thought?",
-  "What's your comment?",
-  "What's your query?",
-  "What's your problem?",
-  "What's your issue?",
-  "What's your answer?",
-  "What's your inquiry?",
-  "What's your input?",
-  "What's your response?",
-  "What's your review",
-];
+const EmailSheetContent = ({ sheetsData }: Props) => {
+  const formSchema = z.object({
+    // email: z.string().email({
+    //   message: "Please enter a valid email address",
+    // }),
+    title: z
+      .string()
+      .min(2, {
+        message: "Title must be at least 2 characters long",
+      })
+      .max(50, {
+        message: "Title must be less than 50 characters long",
+      }),
+    email: z
+      .string()
+      .min(2, {
+        message: "Title must be at least 2 characters long",
+      })
+      .max(50, {
+        message: "Title must be less than 50 characters long",
+      }),
+    message: z
+      .string()
+      .min(2, {
+        message: "Your message must be at least 2 characters long",
+      })
+      .max(250, {
+        message: "Your message must be less than 250 characters long",
+      }),
+  });
 
-const loadingStates = [
-  {
-    text: "Buying a condo",
-  },
-  {
-    text: "Travelling in a flight",
-  },
-  {
-    text: "Meeting Tyler Durden",
-  },
-  {
-    text: "He makes soap",
-  },
-  {
-    text: "We goto a bar",
-  },
-  {
-    text: "Start a fight",
-  },
-  {
-    text: "We like it",
-  },
-  {
-    text: "Welcome to F**** C***",
-  },
-];
-
-type Props = {};
-const EmailSheetContent = (props: Props) => {
-  const { setData } = useSheets();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -139,13 +99,11 @@ const EmailSheetContent = (props: Props) => {
     form.reset();
   }
 
-  // TODO: SHEET SCROLLABLE
-
   return (
     <SheetContent>
       {/* Core Loader Modal */}
       <MultiStepLoader
-        loadingStates={loadingStates}
+        loadingStates={sheetsData.contactSheet.loadingStates}
         loading={loading}
         duration={1000}
         loop={false}
@@ -154,12 +112,10 @@ const EmailSheetContent = (props: Props) => {
       {doneSending && (
         <Vortex className="fixed inset-0 flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full">
           <h2 className="text-white text-2xl md:text-6xl font-bold text-center">
-            Thanks for your message!
+            {sheetsData.contactSheet.emailSent.title}
           </h2>
           <p className="text-white text-sm md:text-2xl max-w-xl mt-6 text-center">
-            I will get back to you as soon as possible. In the meantime, feel
-            free to browse around the website or check out the link for my
-            latest project.
+            {sheetsData.contactSheet.emailSent.subTitle}
           </p>
           <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
             <a
@@ -170,7 +126,7 @@ const EmailSheetContent = (props: Props) => {
                 variant={"link"}
                 className="px-4 py-2 bg-blue-600 hover:bg-blue-700 transition duration-200 rounded-lg text-white shadow-[0px_2px_0px_0px_#FFFFFF40_inset]"
               >
-                Check out my latest project
+                {sheetsData.contactSheet.emailSent.mainButton}
               </Button>
             </a>
             <Button
@@ -178,7 +134,7 @@ const EmailSheetContent = (props: Props) => {
               variant={"ghost"}
               onClick={handleCloseVortex}
             >
-              Go back
+              {sheetsData.contactSheet.emailSent.cancelButton}
             </Button>
           </div>
         </Vortex>
@@ -191,12 +147,10 @@ const EmailSheetContent = (props: Props) => {
           <X className="h-10 w-10" />
         </button>
       )}
-      <SheetSelector />
+      <SheetSelector sheetsData={sheetsData} />
       <SheetHeader className={"mb-2"}>
-        <SheetTitle>Send me an email</SheetTitle>
-        <SheetDescription>
-          Fill the form below and I will get back to you as soon as possible.
-        </SheetDescription>
+        <SheetTitle>{sheetsData.contactSheet.title}</SheetTitle>
+        <SheetDescription>{sheetsData.contactSheet.subTitle}</SheetDescription>
         <Separator />
       </SheetHeader>
       <Form {...form}>
@@ -209,13 +163,17 @@ const EmailSheetContent = (props: Props) => {
             name="title"
             render={({ field }) => (
               <FormItem className="w-full">
-                <FormLabel htmlFor={"title"}>Tytuł:</FormLabel>
+                <FormLabel htmlFor={"title"}>
+                  {sheetsData.contactSheet.firstFormElement.title}:
+                </FormLabel>
                 <FormControl>
                   <PlaceholdersAndVanishInput
                     id={"title"}
                     type={"text"}
                     max={50}
-                    placeholders={placeholders}
+                    placeholders={
+                      sheetsData.contactSheet.firstFormElement.placeholders
+                    }
                     {...field}
                   />
                 </FormControl>
@@ -229,12 +187,16 @@ const EmailSheetContent = (props: Props) => {
             name="email"
             render={({ field }) => (
               <FormItem className="w-full">
-                <FormLabel htmlFor={"email"}>Email:</FormLabel>
+                <FormLabel htmlFor={"email"}>
+                  {sheetsData.contactSheet.secondFormElement.title}:
+                </FormLabel>
                 <FormControl>
                   <PlaceholdersAndVanishInput
                     id={"email"}
                     type={"text"}
-                    placeholders={["essa", "bessa"]}
+                    placeholders={
+                      sheetsData.contactSheet.secondFormElement.placeholders
+                    }
                     {...field}
                   />
                 </FormControl>
@@ -248,10 +210,14 @@ const EmailSheetContent = (props: Props) => {
             name="message"
             render={({ field }) => (
               <FormItem className="w-full">
-                <FormLabel>Message:</FormLabel>
+                <FormLabel>
+                  {sheetsData.contactSheet.thirdFormElement.title}:
+                </FormLabel>
                 <FormControl>
                   <PlaceholdersAndVanishTextArea
-                    placeholders={["essa", "bessa"]}
+                    placeholders={
+                      sheetsData.contactSheet.thirdFormElement.placeholders
+                    }
                     {...field}
                     rows={10}
                     maxLength={250}
@@ -266,7 +232,7 @@ const EmailSheetContent = (props: Props) => {
             className="bg-[#8950ff] py-5 px-10 rounded-md text-white font-bold text-lg w-full hover:text-[#8950ff] transition-all group-hover:translate-x-1 group-hover:-translate-y-1"
           >
             <div className="flex items-center justify-center space-x-4">
-              <div>Send</div>
+              <div>{sheetsData.contactSheet.button}</div>
               <div>
                 <FaPaperPlane className="text-base opacity-70 " />
               </div>

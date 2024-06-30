@@ -1,11 +1,10 @@
 import { AnimatedTooltip } from "@/components/ui/Aceternity/AnimatedTooltip";
 
 type Props = {
-  icon: string;
   index: number;
+  icon: { title: string; description: string; img: string };
 };
 
-// TODO: ADD TECHNOLOGIES TITLES AND DESCRTIPTIONS
 const TechnologyIcon = ({ icon, index }: Props) => {
   return (
     <div
@@ -16,10 +15,10 @@ const TechnologyIcon = ({ icon, index }: Props) => {
       }}
     >
       <AnimatedTooltip
-        icon={icon}
         index={index}
-        title={"test"}
-        description={"test-est"}
+        icon={icon.img}
+        title={icon.title}
+        description={icon.description}
       />
     </div>
   );

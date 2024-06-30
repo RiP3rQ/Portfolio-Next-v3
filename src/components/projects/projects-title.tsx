@@ -1,12 +1,14 @@
 import { SparklesCore } from "@/components/ui/Aceternity/Sparkles";
 
-type Props = {};
-const ProjectsTitle = (props: Props) => {
+type Props = {
+  title_noColor: string;
+  title_color: string;
+};
+const ProjectsTitle = ({ title_noColor, title_color }: Props) => {
   return (
     <div className="max-h-[200px] w-full bg-transparent flex flex-col items-center justify-center overflow-hidden rounded-md">
       <h1 className="font-bold text-4xl md:text-5xl text-center">
-        A small selection of{" "}
-        <span className="text-[#CBACF9]">recent projects</span>
+        {title_noColor} <span className="text-[#CBACF9]">{title_color}</span>
       </h1>
       <div className="w-full h-40 relative">
         {/* Gradients */}

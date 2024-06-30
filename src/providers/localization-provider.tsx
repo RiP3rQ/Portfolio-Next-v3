@@ -8,14 +8,20 @@ import React, {
   useMemo,
   useState,
 } from "react";
+import { data as EnglishData } from "@/locale/english";
+import { data as PolistData } from "@/locale/polish";
 
 export type LocationContextProps = {
-  data: "EN" | "PL";
-  setData: Dispatch<SetStateAction<"EN" | "PL">>;
+  language: "EN" | "PL";
+  setLanguage: Dispatch<SetStateAction<"EN" | "PL">>;
+  pageData: typeof EnglishData;
+  setPageData: Dispatch<SetStateAction<typeof EnglishData>>;
 };
 export const LocationContext = createContext<LocationContextProps>({
-  data: "EN",
-  setData: () => {},
+  language: "EN",
+  setLanguage: () => {},
+  pageData: EnglishData,
+  setPageData: () => {},
 });
 
 type Props = {
@@ -23,14 +29,26 @@ type Props = {
 };
 
 export function LocationProvider({ children }: Readonly<Props>) {
-  const [data, setData] = useState<"EN" | "PL">("EN");
+  const [pageData, setPageData] = useState<typeof EnglishData>(EnglishData);
+  const [language, setLanguage] = useState<"EN" | "PL">("EN");
   const contextValue = useMemo<LocationContextProps>(
     () => ({
-      data,
-      setData,
+      language,
+      setLanguage,
+      pageData,
+      setPageData,
     }),
-    [data, setData],
+    [language, setLanguage, pageData, setPageData],
   );
+
+  useMemo(() => {
+    if (language === "EN") {
+      setPageData(EnglishData);
+    } else {
+      setPageData(PolistData);
+    }
+  }, [language]);
+
   return (
     <LocationContext.Provider value={contextValue}>
       {children}

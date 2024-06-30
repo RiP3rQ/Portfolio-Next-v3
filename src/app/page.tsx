@@ -1,3 +1,5 @@
+"use client";
+
 import Navbar from "@/components/navbar";
 import Hero from "@/components/hero";
 import Grid from "@/components/grid";
@@ -7,38 +9,41 @@ import Footer from "@/components/footer";
 import BlackholeVideo from "@/components/blackhole-video";
 import { TracingBeam } from "@/components/ui/Aceternity/TracingBeam";
 import { LanguageToggle } from "@/components/language/language-toggle";
-import React from "react"; // TODO: TRANSALTIONS
+import React from "react";
+import { useLocation } from "@/providers/localization-provider";
+import { SheetProvider } from "@/providers/sheet-provider";
 
-// TODO: TRANSALTIONS
-// TODO: AI ASSISNTANT
-// TODO: CONTACT FORM - current
-// TODO: RESEND EMAIL
-// TODO: LOADING EMAIL SEND STATUS
 // TODO: RESPONSIVENESS
 // TODO: MOBILE NAVBAR
+// TODO: dynamically render globe + magic buttons + everything in sheets
 
 export default function Home() {
+  const { pageData, language, setLanguage } = useLocation();
+
   return (
-    <main className="min-h-screen w-full bg-transparent relative">
-      <Navbar />
-      <BlackholeVideo />
-      <Hero />
+    <SheetProvider>
+      <main className="min-h-screen w-full bg-transparent relative">
+        <Navbar data={pageData.navbar} sheetsData={pageData.sheets} />
+        <BlackholeVideo />
+        <Hero data={pageData.hero} />
 
-      <div className="max-w-7xl flex flex-col items-center justify-center mx-auto">
-        <TracingBeam>
-          <Grid />
+        <div className="max-w-7xl flex flex-col items-center justify-center mx-auto">
+          <TracingBeam>
+            <Grid data={pageData.bentoGrid} />
 
-          <Projects />
+            <Projects data={pageData.projects} />
 
-          <Approach />
+            <Approach data={pageData.approach} />
 
-          <Footer />
-        </TracingBeam>
-      </div>
-      {/* Lang provider*/}
-      <div className="fixed bottom-4 right-6 z-50">
-        <LanguageToggle />
-      </div>
-    </main>
+            <Footer data={pageData.footer} />
+          </TracingBeam>
+        </div>
+
+        {/* Lang provider*/}
+        <div className="fixed bottom-4 right-6 z-50">
+          <LanguageToggle language={language} setLanguage={setLanguage} />
+        </div>
+      </main>
+    </SheetProvider>
   );
 }

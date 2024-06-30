@@ -35,6 +35,8 @@ export const AnimatedTooltip = ({ icon, index, title, description }: Props) => {
     x.set(event.nativeEvent.offsetX - halfWidth); // set the x value, which is then used in transform and rotate
   };
 
+  const moveLeft = 5 * index + 2;
+
   return (
     <div
       key={index}
@@ -44,9 +46,10 @@ export const AnimatedTooltip = ({ icon, index, title, description }: Props) => {
       <AnimatePresence mode="popLayout">
         {hoveredIndex === index && (
           <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.6 }}
+            initial={{ opacity: 0, x: -moveLeft, y: 20, scale: 0.6 }}
             animate={{
               opacity: 1,
+              x: -moveLeft,
               y: 0,
               scale: 1,
               transition: {
@@ -55,7 +58,7 @@ export const AnimatedTooltip = ({ icon, index, title, description }: Props) => {
                 damping: 10,
               },
             }}
-            exit={{ opacity: 0, y: 20, scale: 0.6 }}
+            exit={{ opacity: 0, x: -moveLeft, y: 20, scale: 0.6 }}
             style={{
               translateX: translateX,
               rotate: rotate,

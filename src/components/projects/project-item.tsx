@@ -57,12 +57,21 @@ import TechnologyIcon from "@/components/projects/technology-icon";
 type Props = {
   id: number;
   title: string;
-  des: string;
+  description: string;
   img: string;
-  iconLists: string[];
+  iconLists: { title: string; description: string; img: string }[];
+  linkText: string;
   link: string;
 };
-const ProjectItem = ({ id, title, des, img, iconLists, link }: Props) => {
+const ProjectItem = ({
+  id,
+  title,
+  description,
+  img,
+  iconLists,
+  linkText,
+  link,
+}: Props) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -95,7 +104,7 @@ const ProjectItem = ({ id, title, des, img, iconLists, link }: Props) => {
             margin: "1vh 0",
           }}
         >
-          {des}
+          {description}
         </p>
         <div className="flex items-center justify-between mt-7 mb-3">
           <div className="flex items-center">
@@ -110,7 +119,7 @@ const ProjectItem = ({ id, title, des, img, iconLists, link }: Props) => {
             href={link}
           >
             <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-              Check source code
+              {linkText}
             </p>
             <FaLocationArrow className="ms-3" color="#CBACF9" />
           </Link>
