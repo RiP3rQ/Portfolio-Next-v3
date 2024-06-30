@@ -505,46 +505,46 @@ export const data = {
         {
           title: "Co zmotywowało Cię do rozpoczęcia kodowania?",
           message:
-            "Od najmłodszych lat fascynowało mnie, jak technologia kształtuje nasz świat. Moja ciekawość doprowadziła mnie do eksploracji kodowania i pokochałem ideę tworzenia czegoś z niczego. Ta pasja rosła, gdy zacząłem budować własne projekty i dostrzegać ich wpływ.",
+            "Od najmłodszych lat fascynowało mnie, jak technologia kształtuje nasz świat. Moja ciekawość skierowała mnie do eksploracji kodowania, a możliwość tworzenia czegoś z niczego bardzo mnie zainspirowała. Ta pasja rosła, gdy zacząłem budować własne projekty i obserwować ich wpływ.",
         },
         {
           title: "Nad jakimi projektami komercyjnymi pracowałeś?",
           message:
-            "W ciągu sześciu miesięcy doświadczenia komercyjnego pracowałem nad kilkoma projektami, w tym nad rozwijaniem dynamicznej platformy e-commerce przy użyciu Next.js i integracją jej z niestandardowym backendem. Przyczyniłem się również do tworzenia aplikacji SaaS, skupiając się na ulepszaniu interfejsu użytkownika i optymalizacji wydajności.",
+            "Podczas sześciu miesięcy doświadczenia komercyjnego pracowałem nad wewnętrznymi projektami oprogramowania w firmie, w tym nad dynamiczną platformą e-commerce wykorzystującą Next.js i integrującą ją z niestandardowym backendem oraz wieloma usługami bezserwerowymi. W wolnym czasie pracowałem również nad projektami osobistymi, takimi jak AI-Butler, wirtualny asystent zasilany przez OpenAI.",
         },
         {
-          title: "Dlaczego wybrałeś Next.js jako główny framework?",
+          title: "Dlaczego wybrałeś Next.js jako swoje główne framework?",
           message:
-            "Wybrałem Next.js ze względu na jego potężne funkcje, takie jak renderowanie po stronie serwera, generowanie statycznych stron i bezproblemową integrację z React. Te funkcje umożliwiają budowanie wydajnych, przyjaznych SEO aplikacji, co jest kluczowe we współczesnym web developmencie.",
+            "Wybrałem Next.js ze względu na jego potężne funkcje, takie jak renderowanie po stronie serwera, generowanie statycznych stron oraz bezproblemową integrację z React. Te funkcje pozwalają na tworzenie wydajnych, przyjaznych dla SEO aplikacji, co jest kluczowe we współczesnym rozwoju webowym.",
         },
         {
           title:
             "Jakie są Twoje długoterminowe cele zawodowe jako fullstack developer?",
           message:
-            "Moim długoterminowym celem jest zostać głównym deweloperem lub architektem fullstack, gdzie będę mógł nadzorować proces tworzenia oprogramowania od początku do końca. Dążę do ciągłego doskonalenia swoich umiejętności, uczestnictwa w innowacyjnych projektach oraz mentorowania młodszych deweloperów, aby pomóc im rozwijać się zawodowo.",
+            "Moim długoterminowym celem jest zostać głównym deweloperem lub architektem fullstack, gdzie będę mógł nadzorować proces rozwoju od początku do końca. Dążę do ciągłego doskonalenia swoich umiejętności, uczestnictwa w innowacyjnych projektach i mentorowania młodszych deweloperów, aby pomóc im rozwijać się w karierze.",
         },
         {
           title:
-            "Jakie masz doświadczenie w technologiach backendowych i bazach danych?",
+            "Jakie masz doświadczenie z technologiami backendowymi i bazami danych?",
           message:
-            "Mam doświadczenie w pracy z Node.js i Express w zakresie developmentu backendu. Jeśli chodzi o bazy danych, korzystałem z MongoDB i PostgreSQL. Implementowałem RESTful API, zarządzałem migracjami bazy danych oraz pracowałem nad systemami uwierzytelniania i autoryzacji.",
+            "Mam doświadczenie w pracy z Node.js i Express w rozwoju backendu. W przypadku baz danych używałem MongoDB i PostgreSQL. Implementowałem RESTful API, zarządzałem migracjami bazy danych oraz pracowałem nad systemami uwierzytelniania i autoryzacji.",
         },
         {
           title: "Jakie jest Twoje najwyższe wykształcenie?",
           message:
-            "Posiadam tytuł licencjata w dziedzinie informatyki, gdzie zdobyłem solidne podstawy w algorytmach, strukturach danych i zasadach inżynierii oprogramowania. To wykształcenie było kluczowe w mojej zdolności do pisania wydajnego i łatwego do utrzymania kodu.",
+            "Posiadam tytuł inżyniera z informatyki, gdzie zdobyłem solidne podstawy w algorytmach, strukturach danych i zasadach inżynierii oprogramowania. To wykształcenie było kluczowe w mojej zdolności do pisania efektywnego i łatwego w utrzymaniu kodu.",
         },
         {
           title:
-            "Czego ostatnio się nauczyłeś i jakie technologie lub umiejętności planujesz się nauczyć?",
+            "Czego ostatnio się nauczyłeś i jakie technologie lub umiejętności planujesz nauczyć się w przyszłości?",
           message:
-            "Ostatnio skupiłem się na doskonaleniu swoich umiejętności w TypeScript, co znacznie zwiększyło solidność mojego kodu. Następnie planuję zgłębić GraphQL, aby lepiej radzić sobie ze złożonymi wymaganiami dotyczącymi pobierania danych i poprawić wydajność moich aplikacji.",
+            "Ostatnio skupiłem się na doskonaleniu swoich umiejętności w TypeScript, co znacznie zwiększyło odporność mojego kodu. Następnie planuję zgłębić RUST, aby poprawić swoje umiejętności w rozwoju backendu i eksplorować nowe paradygmaty w programowaniu.",
         },
         {
           title:
-            "Jak pozostajesz na bieżąco z najnowszymi trendami i aktualizacjami w Next.js i web developmencie?",
+            "Jak pozostajesz na bieżąco z najnowszymi trendami i aktualizacjami w Next.js oraz w rozwoju webowym?",
           message:
-            "Pozostaję na bieżąco, śledząc branżowe blogi, subskrybując newslettery i uczestnicząc w społecznościach online, takich jak Stack Overflow i Reddit. Dodatkowo regularnie uczestniczę w webinarach i warsztatach oraz przyczyniam się do projektów open-source, aby utrzymać swoje umiejętności na wysokim poziomie i aktualne.",
+            "Pozostaję na bieżąco, śledząc branżowe blogi, subskrybując newslettery i uczestnicząc w społecznościach online, takich jak Stack Overflow i Reddit. Dodatkowo regularnie uczestniczę w webinarach i warsztatach oraz przyczyniam się do projektów open-source, aby utrzymać swoje umiejętności na najwyższym poziomie.",
         },
       ],
     },
