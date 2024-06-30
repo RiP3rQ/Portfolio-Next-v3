@@ -9,11 +9,11 @@ type Props = {
 
 const Approach = ({ data }: Props) => {
   return (
-    <section className="w-full py-20">
+    <section className="w-4/5 lg:w-full py-20 mx-auto lg:px-6">
       <h1 className="font-bold text-4xl md:text-5xl text-center">
         {data.subTitle} <span className="text-[#CBACF9]">{data.mainTitle}</span>
       </h1>
-      <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-6 lg:gap-4">
+      <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-6">
         <Card
           title={data.phase1.title}
           icon={<AceternityIcon order={data.phase1.order} />}

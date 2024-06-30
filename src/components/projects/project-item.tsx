@@ -1,50 +1,3 @@
-// import Image from "next/image";
-//
-// return (
-//     <div
-//       className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center w-full"
-//       key={id}
-//     >
-//       <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
-//         {title}
-//       </h1>
-//
-//       <p
-//         className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
-//         style={{
-//           color: "#BEC1DD",
-//           margin: "1vh 0",
-//         }}
-//       >
-//         {des}
-//       </p>
-//
-//       <div className="flex items-center justify-between mt-7 mb-3">
-//         <div className="flex items-center">
-//           {iconLists.map((icon, index) => (
-//             <div
-//               key={index}
-//               className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
-//               style={{
-//                 transform: `translateX(-${5 * index + 2}px)`,
-//               }}
-//             >
-//               <img src={icon} alt="icon5" className="p-2" />
-//             </div>
-//           ))}
-//         </div>
-//
-//         <div className="flex justify-center items-center">
-//           <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-//             Check Live Site
-//           </p>
-//           <FaLocationArrow className="ms-3" color="#CBACF9" />
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
 "use client";
 
 import { useRef } from "react";
@@ -90,15 +43,13 @@ const ProjectItem = ({
       className="flex items-center justify-center w-full lg:min-h-[32.5rem] h-[25rem]"
     >
       <div
-        className="flex flex-col items-start justify-center w-1/2 sm:w-3/4"
+        className="flex flex-col items-start justify-center w-full h-full xl:w-3/5"
         key={id}
       >
-        <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
-          {title}
-        </h1>
+        <h1 className="font-bold lg:text-2xl md:text-xl text-base">{title}</h1>
 
         <p
-          className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
+          className="lg:text-xl lg:font-normal font-light text-sm"
           style={{
             color: "#BEC1DD",
             margin: "1vh 0",
@@ -106,7 +57,7 @@ const ProjectItem = ({
         >
           {description}
         </p>
-        <div className="flex items-center justify-between mt-7 mb-3">
+        <div className="w-full flex flex-col md:flex-row items-start md:items-center justify-between mt-0 md:mt-7 mb-0 md:mb-3">
           <div className="flex items-center">
             {iconLists.map((icon, index) => (
               <TechnologyIcon key={index} icon={icon} index={index} />
@@ -114,7 +65,7 @@ const ProjectItem = ({
           </div>
 
           <Link
-            className="flex justify-center items-center cursor-pointer hover:underline"
+            className="flex mt-5 md:mt-0 items-center cursor-pointer hover:underline"
             target={"_blank"}
             href={link}
           >
@@ -125,7 +76,9 @@ const ProjectItem = ({
           </Link>
         </div>
       </div>
-      <div className={"sm:w-1/2 w-1/4 h-full flex items-center justify-center"}>
+      <div
+        className={"hidden xl:flex xl:w-2/5 h-full items-center justify-center"}
+      >
         <ProjectImage img={img} link={link} title={title} />
       </div>
     </motion.div>

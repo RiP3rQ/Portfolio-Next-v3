@@ -11,19 +11,22 @@ type Props = {
 
 const Footer = ({ data }: Props) => {
   return (
-    <footer className="w-full pt-20 pb-10" id="contact">
+    <footer
+      className="w-4/5 lg:w-full py-20 pb-10 mx-auto lg:px-6"
+      id="contact"
+    >
       <div className="flex flex-col items-center">
-        <h1 className="font-bold text-4xl md:text-5xl text-center lg:max-w-[45vw]">
+        <h1 className="font-bold text-xl md:text-3xl xl:text-5xl text-center lg:max-w-[45vw]">
           {data.title_part1}{" "}
           <span className="text-[#CBACF9]">{data.title_part2}</span>{" "}
           {data.title_part3}
         </h1>
-        <p className="text-white-200 md:mt-10 my-5 text-center">
+        <p className="text-white-200 md:mt-10 my-5 text-center text-xs md:text-lg">
           {data.description}
         </p>
         <FooterButtons data={data} />
       </div>
-      <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
+      <div className="flex mt-16 md:flex-row flex-col justify-between items-center px-4">
         <p className="md:text-base text-sm md:font-normal font-light underline underline-offset-1">
           {data.autograph}
         </p>

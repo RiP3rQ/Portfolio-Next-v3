@@ -100,7 +100,7 @@ export const data = {
       titleClassName: "justify-center md:max-w-full max-w-60 text-center",
       img: "",
       spareImg: "",
-      contactButtonName: "Skopiuj mój e-mail",
+      contactButtonName: "Skontaktuj się",
     },
   ],
 
