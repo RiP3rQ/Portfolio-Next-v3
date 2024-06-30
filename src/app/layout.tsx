@@ -30,9 +30,9 @@ export default function RootLayout({
           <LocationProvider>
             <Toaster />
             {children}
+            <Analytics />
           </LocationProvider>
         </ThemeProvider>
-        <Analytics />
       </body>
     </html>
   );
