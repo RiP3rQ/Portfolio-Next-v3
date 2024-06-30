@@ -13,7 +13,6 @@ import React from "react";
 import { useLocation } from "@/providers/localization-provider";
 import { SheetProvider } from "@/providers/sheet-provider";
 
-// TODO: AI ASSISNTANT
 // TODO: RESPONSIVENESS
 // TODO: MOBILE NAVBAR
 // TODO: dynamically render globe + magic buttons + everything in sheets
@@ -24,7 +23,7 @@ export default function Home() {
   return (
     <SheetProvider>
       <main className="min-h-screen w-full bg-transparent relative">
-        <Navbar data={pageData.navbar} />
+        <Navbar data={pageData.navbar} sheetsData={pageData.sheets} />
         <BlackholeVideo />
         <Hero data={pageData.hero} />
 

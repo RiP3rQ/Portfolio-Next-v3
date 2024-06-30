@@ -4,20 +4,24 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
 
-type Props = {};
-const SheetSelector = (props: Props) => {
+type Props = {
+  sheetsData: typeof import("@/locale/english").data.sheets;
+};
+const SheetSelector = ({ sheetsData }: Props) => {
   const { data, setData } = useSheets();
 
   const handleChangeSheet = (e: React.MouseEvent<HTMLDivElement>) => {
-    const sheet = e.currentTarget.textContent as "Contact" | "AI" | "FAQ";
+    const sheet = e.currentTarget.textContent as "Contact" | "FAQ";
     setData({ isOpen: true, currentSheet: sheet });
   };
 
   return (
     <div className={"my-2"}>
-      <p className={"w-full text-center text-xs"}>Sheet selection:</p>
+      <p className={"w-full text-center text-xs"}>
+        {sheetsData.sheetOptions.title}
+      </p>
       <div className={"flex items-center justify-center gap-x-2"}>
-        {["Contact", "AI", "FAQ"].map((sheet, index) => (
+        {sheetsData.sheetOptions.options.map((sheet, index) => (
           <Badge
             key={index}
             variant={"outline"}

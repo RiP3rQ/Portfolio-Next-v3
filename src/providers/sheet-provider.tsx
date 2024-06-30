@@ -12,12 +12,12 @@ import React, {
 export type SheetContextProps = {
   data: {
     isOpen: boolean;
-    currentSheet: "Contact" | "AI" | "FAQ";
+    currentSheet: "Contact" | "FAQ";
   };
   setData: Dispatch<
     SetStateAction<{
       isOpen: boolean;
-      currentSheet: "Contact" | "AI" | "FAQ";
+      currentSheet: "Contact" | "FAQ";
     }>
   >;
 };
@@ -36,7 +36,7 @@ type Props = {
 export function SheetProvider({ children }: Readonly<Props>) {
   const [data, setData] = useState<{
     isOpen: boolean;
-    currentSheet: "Contact" | "AI" | "FAQ";
+    currentSheet: "Contact" | "FAQ";
   }>({
     isOpen: false,
     currentSheet: "Contact",

@@ -1,11 +1,12 @@
 import { useSheets } from "@/providers/sheet-provider";
 import { Sheet } from "@/components/ui/sheet";
 import EmailSheetContent from "@/components/sheets/email-sheet-content";
-import AISheetContent from "@/components/sheets/ai-sheet-content";
 import FAQSheetContent from "@/components/sheets/faq-sheet-content";
 
-type Props = {};
-const SheetMounted = (props: Props) => {
+type Props = {
+  sheetsData: typeof import("@/locale/english").data.sheets;
+};
+const SheetMounted = ({ sheetsData }: Props) => {
   const { data, setData } = useSheets();
   return (
     <Sheet
@@ -14,9 +15,12 @@ const SheetMounted = (props: Props) => {
         setData({ isOpen: false, currentSheet: "Contact" });
       }}
     >
-      {data.currentSheet === "Contact" && <EmailSheetContent />}
-      {data.currentSheet === "AI" && <AISheetContent />}
-      {data.currentSheet === "FAQ" && <FAQSheetContent />}
+      {data.currentSheet === "Contact" && (
+        <EmailSheetContent sheetsData={sheetsData} />
+      )}
+      {data.currentSheet === "FAQ" && (
+        <FAQSheetContent sheetsData={sheetsData} />
+      )}
     </Sheet>
   );
 };

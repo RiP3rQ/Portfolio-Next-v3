@@ -25,13 +25,6 @@ export const data = {
       link: "https://www.linkedin.com/in/rafalpompa00/",
       dateText: "Joined December 2023",
     },
-    ai: {
-      slug: "Ask AI",
-      title: "Ask AI assistant",
-      description: "Ask my AI assistant for more information about me.",
-      image: "/ai.png",
-      dateText: "Created July 2024",
-    },
     contact: {
       slug: "Contact",
       title: "Contact",
@@ -434,5 +427,136 @@ export const data = {
     button: "Let's get in touch",
     faq: "Look at FAQ",
     autograph: "Handcrafted by RiP3rQ @ 2024",
+  },
+
+  sheets: {
+    selectors: {
+      Contact: "Contact",
+      AI: "AI",
+      FAQ: "FAQ",
+    },
+    sheetOptions: {
+      title: "Sheet Options:",
+      options: ["Contact", "FAQ"],
+    },
+    contactSheet: {
+      title: "Send me an email",
+      subTitle:
+        "Fill the form below and I will get back to you as soon as possible.",
+      firstFormElement: {
+        title: "Email's title",
+        placeholders: [
+          "Catchy Title",
+          "Breathtaking Title",
+          "How to get rich",
+          "Clickbait here",
+          "Another brilliant idea",
+          "The magic starts here",
+        ],
+      },
+      secondFormElement: {
+        title: "Your email address",
+        placeholders: [
+          "superstar@example.com",
+          "not_a_robot@domain.com",
+          "future_billionaire@world.com",
+          "yourname@domain.com",
+          "email@inbox.com",
+          "hacker@cyberspace.com",
+        ],
+      },
+      thirdFormElement: {
+        title: "Your message",
+        placeholders: [
+          "Write your masterpiece",
+          "Share your wisdom",
+          "Spill the beans",
+          "Tell me your secrets",
+          "Unleash your thoughts",
+          "Make it epic",
+        ],
+      },
+      button: "Send",
+      loadingStates: [
+        {
+          text: "Compiling puns",
+        },
+        {
+          text: "Debugging life",
+        },
+        {
+          text: "Refactoring coffee",
+        },
+        {
+          text: "Deploying jokes",
+        },
+        {
+          text: "Optimizing memes",
+        },
+        {
+          text: "git push origin master --force",
+        },
+        {
+          text: "PRODUCTION IS ON FIRE!",
+        },
+      ],
+      emailSent: {
+        title: "Thanks for your message!",
+        subTitle:
+          "I will get back to you as soon as possible. In the meantime, feel free to browse around the website or check out the link for my latest project.",
+        mainButton: "Check out my latest project",
+        cancelButton: "Go back to site",
+      },
+    },
+    faqSheet: {
+      title: "FAQ",
+      subTitle: "List of frequently asked questions",
+      faqs: [
+        {
+          title: "What motivated you to start coding?",
+          message:
+            "From a young age, I was fascinated by how technology shapes our world. My curiosity led me to explore coding, and I loved the idea of creating something out of nothing. This passion grew as I started building my own projects and seeing the impact they could have.",
+        },
+        {
+          title: "What kind of commercial projects have you worked on?",
+          message:
+            "In my six months of commercial experience, I have worked on several projects, including developing a dynamic e-commerce platform using Next.js and integrating it with a custom backend. I also contributed to a SaaS application, focusing on enhancing the user interface and optimizing performance.",
+        },
+        {
+          title: "Why did you choose Next.js as your main framework?",
+          message:
+            "I chose Next.js because of its powerful features, such as server-side rendering, static site generation, and its seamless integration with React. These features allow for building high-performance, SEO-friendly applications, which are crucial in modern web development.",
+        },
+        {
+          title:
+            "What are your long-term career goals as a fullstack developer?",
+          message:
+            "My long-term goal is to become a lead developer or a fullstack architect, where I can oversee the development process from start to finish. I aim to continually improve my skills, contribute to innovative projects, and mentor junior developers to help them grow in their careers.",
+        },
+        {
+          title:
+            "What is your experience with backend technologies and databases?",
+          message:
+            "I have experience working with Node.js and Express for backend development. For databases, I have used MongoDB and PostgreSQL. I have implemented RESTful APIs, handled database migrations, and worked on authentication and authorization systems.",
+        },
+        {
+          title: "What is your highest level of education?",
+          message:
+            "I hold a Bachelor's degree in Computer Science, where I gained a strong foundation in algorithms, data structures, and software engineering principles. This education has been instrumental in my ability to write efficient and maintainable code.",
+        },
+        {
+          title:
+            "What have you recently learned, and what technologies or skills are you planning to learn next?",
+          message:
+            "Recently, I have focused on improving my skills in TypeScript, which has greatly enhanced the robustness of my code. Next, I plan to delve into GraphQL to better handle complex data fetching requirements and improve the efficiency of my applications.",
+        },
+        {
+          title:
+            "How do you stay updated with the latest trends and updates in Next.js and web development?",
+          message:
+            "I stay updated by following industry blogs, subscribing to newsletters, and participating in online communities such as Stack Overflow and Reddit. Additionally, I regularly attend webinars and workshops and contribute to open-source projects to keep my skills sharp and current.",
+        },
+      ],
+    },
   },
 };

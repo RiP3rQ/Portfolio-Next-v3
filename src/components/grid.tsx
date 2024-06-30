@@ -1,3 +1,4 @@
+"use client";
 import { BentoGrid, BentoGridItem } from "@/components/ui/Aceternity/BentoGrid";
 import React from "react";
 

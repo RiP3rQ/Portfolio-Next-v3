@@ -1,3 +1,4 @@
+"use client";
 import ProjectsTitle from "@/components/projects/projects-title";
 import ProjectItem from "@/components/projects/project-item";
 import React from "react";
