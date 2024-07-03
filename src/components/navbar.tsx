@@ -35,7 +35,7 @@ const Navbar = ({ data, sheetsData }: Props) => {
             <HoverCardTrigger asChild>
               <Link href={data.profile.link} target={"_blank"}>
                 <Avatar className={"cursor-pointer"}>
-                  <AvatarImage src={data.profile.image} />
+                  <AvatarImage src={data.profile.image} alt={"avatar"} />
                   <AvatarFallback>
                     <Skeleton className="w-6 h-6 rounded-full" />
                   </AvatarFallback>
@@ -45,7 +45,7 @@ const Navbar = ({ data, sheetsData }: Props) => {
             <HoverCardContent className="w-80">
               <div className="flex justify-between space-x-4">
                 <Avatar>
-                  <AvatarImage src={data.profile.image} />
+                  <AvatarImage src={data.profile.image} alt={"avatar"} />
                   <AvatarFallback>{data.profile.slug}</AvatarFallback>
                 </Avatar>
                 <div className="space-y-1">
@@ -74,7 +74,10 @@ const Navbar = ({ data, sheetsData }: Props) => {
               <HoverCardContent className="w-80">
                 <div className="flex justify-between space-x-4">
                   <Avatar>
-                    <AvatarImage src={data.github.image} />
+                    <AvatarImage
+                      src={data.github.image}
+                      alt={data.github.image}
+                    />
                     <AvatarFallback>{data.github.slug}</AvatarFallback>
                   </Avatar>
                   <div className="space-y-1">
@@ -101,7 +104,10 @@ const Navbar = ({ data, sheetsData }: Props) => {
               <HoverCardContent className="w-80">
                 <div className="flex justify-between space-x-4">
                   <Avatar>
-                    <AvatarImage src={data.linkedin.image} />
+                    <AvatarImage
+                      src={data.linkedin.image}
+                      alt={data.linkedin.image}
+                    />
                     <AvatarFallback>{data.linkedin.slug}</AvatarFallback>
                   </Avatar>
                   <div className="space-y-1">

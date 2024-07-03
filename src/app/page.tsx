@@ -12,6 +12,7 @@ import { LanguageToggle } from "@/components/language/language-toggle";
 import React from "react";
 import { useLocation } from "@/providers/localization-provider";
 import { SheetProvider } from "@/providers/sheet-provider";
+import StarsCanvas from "@/components/stars-canvas";
 
 export default function Home() {
   const { pageData, language, setLanguage } = useLocation();
@@ -24,6 +25,7 @@ export default function Home() {
         <Hero data={pageData.hero} />
 
         <div className="max-w-7xl flex flex-col items-center justify-center mx-auto">
+          <StarsCanvas />
           <TracingBeam>
             <Grid data={pageData.bentoGrid} />
 

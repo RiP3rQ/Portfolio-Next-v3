@@ -15,7 +15,7 @@ const Hero = ({ data }: Props) => {
   return (
     <div className={"pb-20 pt-36 z-40"}>
       <div
-        className="h-screen w-full dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2]
+        className="h-screen w-full dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2] -z-20
        absolute top-0 left-0 flex items-center justify-center"
       >
         <div

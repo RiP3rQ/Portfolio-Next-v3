@@ -21,10 +21,10 @@ import { Separator } from "@/components/ui/separator";
 import SheetSelector from "@/components/sheets/sheet-selector";
 import { PlaceholdersAndVanishInput } from "@/components/ui/Aceternity/PlaceholdersAndVanishInput";
 import { PlaceholdersAndVanishTextArea } from "@/components/ui/Aceternity/PlaceholdersAndVanishTextArea";
-import { X } from "lucide-react";
+import { TriangleAlertIcon, X } from "lucide-react";
 import { MultiStepLoader } from "@/components/ui/Aceternity/MultiStepLoader";
 import { useState } from "react";
-import { Vortex } from "@/components/ui/Aceternity/Vortex";
+import VortexEffect from "@/components/ui/Aceternity/VortexEffect";
 import { sendEmail } from "@/actions/send-email";
 import { toast } from "sonner";
 
@@ -69,21 +69,29 @@ const EmailSheetContent = ({ sheetsData }: Props) => {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setLoading(true);
 
-    const { data, error } = await sendEmail({
+    // Store the timeout ID
+    const timeoutId = setTimeout(() => {
+      setLoading(false);
+      setDoneSending(true);
+    }, 7000);
+
+    const { error } = await sendEmail({
       email: values.email,
       title: values.title,
       message: values.message,
     });
+    // If an error occurs, clear the timeout and handle the error
     if (error) {
       console.error(error);
-      toast.error("ERROR! Try again later!");
+      toast.error("ERROR! Try again later!", {
+        className: "bg-red-500 text-white ml-2",
+        icon: <TriangleAlertIcon />,
+      });
+      clearTimeout(timeoutId); // Clear the timeout
+      setLoading(false);
+      setDoneSending(false);
       return;
     }
-
-    setTimeout(() => {
-      setLoading(false);
-      setDoneSending(true);
-    }, 6000);
   }
 
   async function handleCloseVortex() {
@@ -100,37 +108,6 @@ const EmailSheetContent = ({ sheetsData }: Props) => {
         duration={1000}
         loop={false}
       />
-      {/* Vortex effect */}
-      {doneSending && (
-        <Vortex className="fixed inset-0 flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full">
-          <h2 className="text-white text-2xl md:text-6xl font-bold text-center">
-            {sheetsData.contactSheet.emailSent.title}
-          </h2>
-          <p className="text-white text-sm md:text-2xl max-w-xl mt-6 text-center">
-            {sheetsData.contactSheet.emailSent.subTitle}
-          </p>
-          <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
-            <a
-              href={"https://youtu.be/dQw4w9WgXcQ?si=pmKt6kDKY6t-DL3z"}
-              target={"_blank"}
-            >
-              <Button
-                variant={"link"}
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 transition duration-200 rounded-lg text-white shadow-[0px_2px_0px_0px_#FFFFFF40_inset]"
-              >
-                {sheetsData.contactSheet.emailSent.mainButton}
-              </Button>
-            </a>
-            <Button
-              className="px-4 py-2  text-white"
-              variant={"ghost"}
-              onClick={handleCloseVortex}
-            >
-              {sheetsData.contactSheet.emailSent.cancelButton}
-            </Button>
-          </div>
-        </Vortex>
-      )}
       {loading && (
         <button
           className="fixed top-4 right-4 text-black dark:text-white z-[120]"
@@ -138,6 +115,13 @@ const EmailSheetContent = ({ sheetsData }: Props) => {
         >
           <X className="h-10 w-10" />
         </button>
+      )}
+      {/* Vortex effect */}
+      {doneSending && (
+        <VortexEffect
+          sheetsData={sheetsData}
+          handleCloseVortex={handleCloseVortex}
+        />
       )}
       <SheetSelector sheetsData={sheetsData} />
       <SheetHeader className={"mb-2"}>

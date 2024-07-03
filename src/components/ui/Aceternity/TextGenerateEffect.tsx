@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -11,18 +11,29 @@ export const TextGenerateEffect = ({
   className?: string;
 }) => {
   const [scope, animate] = useAnimate();
-  let wordsArray = words.split(" ");
+  // Memoize the split words array
+  const wordsArray = useMemo(() => words.split(" "), [words]);
+
+  // Memoize animation settings
+  const animationSettings = useMemo(
+    () => ({
+      opacity: 1,
+    }),
+    [],
+  );
+
+  const animationOptions = useMemo(
+    () => ({
+      duration: 2,
+      delay: stagger(0.2),
+    }),
+    [],
+  );
+
   useEffect(() => {
-    animate(
-      "span",
-      {
-        opacity: 1,
-      },
-      {
-        duration: 2,
-        delay: stagger(0.2),
-      },
-    );
+    if (scope.current) {
+      animate("span", animationSettings, animationOptions);
+    }
   }, [scope.current, wordsArray]);
 
   const renderWords = () => {
