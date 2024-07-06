@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Suspense, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { PointMaterial, Points } from "@react-three/drei";
 // @ts-ignore
@@ -35,9 +35,7 @@ const StarBackground = (props: any) => {
 const StarsCanvas = () => (
   <div className="w-full h-auto fixed inset-0 -z-10">
     <Canvas camera={{ position: [0, 0, 1] }}>
-      <Suspense fallback={null}>
-        <StarBackground />
-      </Suspense>
+      <StarBackground />
     </Canvas>
   </div>
 );

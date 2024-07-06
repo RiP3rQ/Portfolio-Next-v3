@@ -17,6 +17,7 @@ interface VortexProps {
   backgroundColor?: string;
   doneSending?: boolean;
   setDoneSending?: (done: boolean) => void;
+  asChild?: boolean;
 }
 
 export const Vortex = (props: VortexProps) => {
@@ -38,7 +39,7 @@ export const Vortex = (props: VortexProps) => {
   const xOff = 0.00125;
   const yOff = 0.00125;
   const zOff = 0.0005;
-  const backgroundColor = props.backgroundColor || "#000000";
+  const backgroundColor = props.backgroundColor || "#000002";
   let tick = 0;
   const noise3D = createNoise3D();
   let particleProps = new Float32Array(particlePropsLength);
@@ -241,7 +242,12 @@ export const Vortex = (props: VortexProps) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         ref={containerRef}
-        className="w-full h-full fixed inset-0 z-[100] backdrop-blur-2xl flex items-center justify-center"
+        className={cn(
+          props.asChild
+            ? "w-full h-full backdrop-blur-2xl z-10"
+            : "w-full h-full fixed inset-0 z-[100] backdrop-blur-2xl flex items-center justify-center",
+          props.className,
+        )}
       >
         <canvas ref={canvasRef}></canvas>
       </motion.div>

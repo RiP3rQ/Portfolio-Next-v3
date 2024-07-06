@@ -5,8 +5,8 @@ import GridGlobe from "./GridGlobe";
 import MagicButton from "@/components/ui/Aceternity/MagicButton";
 import TechStackMovingLists from "@/components/ui/Aceternity/TechStackMovingLists";
 import { Meteors } from "@/components/ui/Aceternity/Meteors";
-import { GlowingStarsBackgroundCard } from "@/components/ui/Aceternity/GlowingStarts";
 import { useSheets } from "@/providers/sheet-provider";
+import VortexBentoEffect from "@/components/ui/Aceternity/VortexBentoEffect";
 
 export const BentoGrid = ({
   className,
@@ -116,7 +116,7 @@ export const BentoGridItem = ({
           {/* for the github 3d globe */}
           {id === 1 && <GridGlobe />}
           {/* for transforming ideas */}
-          {id === 2 && <GlowingStarsBackgroundCard />}
+          {id === 2 && <VortexBentoEffect />}
           {/* Tech stack list div */}
           {id === 3 && <TechStackMovingLists />}
           {id === 4 && <Meteors number={20} />}

@@ -9,7 +9,7 @@ type Props = {
 
 const RecentProjects = ({ data }: Props) => {
   return (
-    <div className="w-4/5 lg:w-full my-20 mx-auto lg:px-6">
+    <div className="w-4/5 lg:w-full my-20 mx-auto lg:px-12">
       <ProjectsTitle
         title_noColor={data.title_noColor}
         title_color={data.title_color}

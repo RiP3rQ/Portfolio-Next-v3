@@ -13,7 +13,7 @@ const FooterButtons = ({ data }: Props) => {
   return (
     <div
       className={
-        "flex mx-auto w-4/5 md:w-full items-center justify-center gap-2"
+        "flex flex-col md:flex-row mx-auto w-4/5 md:w-full items-center justify-center gap-2"
       }
     >
       <MagicButton
