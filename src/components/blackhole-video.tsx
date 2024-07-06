@@ -7,6 +7,7 @@ const BlackholeVideo = (props: Props) => {
           autoPlay
           muted
           loop
+          playsInline
           className="rotate-180 absolute top-[-460px] w-full h-full object-cover -z-30"
         >
           <source src="/blackhole.webm" type="video/webm" />
