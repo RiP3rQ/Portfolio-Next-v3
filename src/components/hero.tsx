@@ -1,6 +1,5 @@
 "use client";
 
-import { TextGenerateEffect } from "@/components/ui/Aceternity/TextGenerateEffect";
 import { FaLocationArrow } from "react-icons/fa6";
 import MagicButton from "@/components/ui/Aceternity/MagicButton";
 import React from "react";
@@ -30,10 +29,17 @@ const Hero = ({ data }: Props) => {
             {data.subTitle}
           </p>
 
-          <TextGenerateEffect
-            words={data.mainTitle}
-            className="text-center text-[40px] md:text-5xl lg:text-6xl"
-          />
+          <div
+            className={
+              "text-center text-[40px] md:text-5xl lg:text-6xl font-bold"
+            }
+          >
+            <div className="my-4">
+              <div className=" dark:text-white text-black leading-snug tracking-wide">
+                {data.mainTitle}
+              </div>
+            </div>
+          </div>
 
           <p className="text-center md:tracking-wider text-sm md:text-lg lg:text-xl mb-10 lg:mb-0">
             {data.description}

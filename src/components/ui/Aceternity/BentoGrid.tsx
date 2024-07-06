@@ -35,7 +35,6 @@ export const BentoGridItem = ({
   img,
   imgClassName,
   titleClassName,
-  spareImg,
   contactButtonName,
 }: {
   className?: string;
@@ -45,7 +44,6 @@ export const BentoGridItem = ({
   img?: string;
   imgClassName?: string;
   titleClassName?: string;
-  spareImg?: string;
   contactButtonName?: string;
 }) => {
   const { setData } = useSheets();
@@ -76,19 +74,6 @@ export const BentoGridItem = ({
               src={img}
               alt={img}
               className={cn(imgClassName, "object-cover object-center ")}
-            />
-          )}
-        </div>
-        <div
-          className={`absolute right-0 -bottom-5 ${
-            id === 5 || (id === 4 && "w-full opacity-80")
-          } `}
-        >
-          {spareImg && (
-            <img
-              src={spareImg}
-              alt={spareImg}
-              className="object-cover object-center w-full h-full"
             />
           )}
         </div>

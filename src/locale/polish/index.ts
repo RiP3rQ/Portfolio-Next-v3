@@ -49,7 +49,6 @@ export const data = {
       imgClassName: "w-full h-full",
       titleClassName: "justify-start max-w-full",
       img: "",
-      spareImg: "",
     },
     {
       id: 2,
@@ -59,7 +58,6 @@ export const data = {
       imgClassName: "",
       titleClassName: "justify-start",
       img: "",
-      spareImg: "",
     },
     {
       id: 3,
@@ -69,7 +67,6 @@ export const data = {
       imgClassName: "",
       titleClassName: "justify-center",
       img: "",
-      spareImg: "",
     },
     {
       id: 4,
@@ -79,7 +76,6 @@ export const data = {
       imgClassName: "absolute right-0 bottom-0 w-60",
       titleClassName: "justify-start",
       img: "/b4.svg",
-      spareImg: "/grid.svg",
     },
     {
       id: 5,
@@ -89,7 +85,6 @@ export const data = {
       imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
       titleClassName: "justify-center md:justify-start lg:justify-center",
       img: "/b5.svg",
-      spareImg: "/grid.svg",
     },
     {
       id: 6,
@@ -99,7 +94,6 @@ export const data = {
       imgClassName: "",
       titleClassName: "justify-center md:max-w-full max-w-60 text-center",
       img: "",
-      spareImg: "",
       contactButtonName: "Skontaktuj się",
     },
   ],

@@ -20,7 +20,6 @@ const Grid = ({ data }: Props) => {
             img={item.img}
             imgClassName={item.imgClassName}
             titleClassName={item.titleClassName}
-            spareImg={item.spareImg}
             contactButtonName={item?.contactButtonName}
           />
         ))}
