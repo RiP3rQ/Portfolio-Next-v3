@@ -3,16 +3,31 @@ import { useSheets } from "@/providers/sheet-provider";
 import React from "react";
 import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
+import { useLocation } from "@/providers/localization-provider";
 
 type Props = {
   sheetsData: typeof import("@/locale/english").data.sheets;
 };
 const SheetSelector = ({ sheetsData }: Props) => {
   const { data, setData } = useSheets();
+  const { language } = useLocation();
 
   const handleChangeSheet = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (language === "PL" && e.currentTarget.textContent === "Kontakt") {
+      setData({ isOpen: true, currentSheet: "Contact" });
+      return;
+    }
     const sheet = e.currentTarget.textContent as "Contact" | "FAQ";
     setData({ isOpen: true, currentSheet: sheet });
+  };
+
+  const shouldHighlightSheet = (sheet: string): boolean => {
+    return (
+      data.currentSheet === sheet ||
+      (language === "PL" &&
+        sheet === "Kontakt" &&
+        data.currentSheet === "Contact")
+    );
   };
 
   return (
@@ -28,7 +43,7 @@ const SheetSelector = ({ sheetsData }: Props) => {
             onClick={(e) => handleChangeSheet(e)}
             className={cn(
               "cursor-pointer",
-              data.currentSheet === sheet && "bg-purple-500 text-white",
+              shouldHighlightSheet(sheet) && "bg-purple-500 text-white",
             )}
           >
             {sheet}

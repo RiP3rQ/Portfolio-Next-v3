@@ -418,7 +418,6 @@ export const data = {
   sheets: {
     selectors: {
       Contact: "Kontakt",
-      AI: "AI",
       FAQ: "FAQ",
     },
     sheetOptions: {

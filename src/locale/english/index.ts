@@ -426,7 +426,6 @@ export const data = {
   sheets: {
     selectors: {
       Contact: "Contact",
-      AI: "AI",
       FAQ: "FAQ",
     },
     sheetOptions: {
