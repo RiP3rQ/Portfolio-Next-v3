@@ -4,6 +4,7 @@ import "./globals.css";
 import { LocationProvider } from "@/providers/localization-provider";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -30,6 +31,7 @@ export default function RootLayout({
           <LocationProvider>
             <Toaster />
             {children}
+            <SpeedInsights />
             <Analytics />
           </LocationProvider>
         </ThemeProvider>
