@@ -11,7 +11,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "RiP3rQ's Portfolio",
-  description: "Fullstack Developer, Gym Enthusiast, and a Gamer.",
+  description:
+    "Junior Fullstack Developer. Specializing in Next.js with passion for backend development and databases management.",
 };
 
 export default function RootLayout({
@@ -21,6 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="10Sq2RwsVnvU-fikGubkgJXnDZdkXVt4EglfIiPqUX8"
+        />
+      </head>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
