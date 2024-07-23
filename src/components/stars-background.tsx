@@ -8,7 +8,7 @@ export const StarBackground = (props: any) => {
   const ref: any = useRef();
   const initialRadius = 0.1; // Start with a small radius
   const maxRadius = 1.2; // Maximum radius
-  const duration = 2000; // 2 seconds
+  const duration = 1000; // 1 seconds
   const [radius, setRadius] = useState(initialRadius);
   const [positions, setPositions] = useState(() =>
     random.inSphere(new Float32Array(5000), { radius: initialRadius }),

@@ -4,9 +4,9 @@ import { BackgroundGradientAnimation } from "./GradientBg";
 import GridGlobe from "./GridGlobe";
 import MagicButton from "@/components/ui/Aceternity/MagicButton";
 import TechStackMovingLists from "@/components/ui/Aceternity/TechStackMovingLists";
-import { Meteors } from "@/components/ui/Aceternity/Meteors";
 import { useSheets } from "@/providers/sheet-provider";
 import VortexBentoEffect from "@/components/ui/Aceternity/VortexBentoEffect";
+import dynamic from "next/dynamic";
 
 export const BentoGrid = ({
   className,
@@ -26,6 +26,13 @@ export const BentoGrid = ({
     </div>
   );
 };
+
+const Meteors = dynamic(
+  () => import("@/components/ui/Aceternity/Meteors").then((m) => m.Meteors),
+  {
+    ssr: false,
+  },
+);
 
 export const BentoGridItem = ({
   className,

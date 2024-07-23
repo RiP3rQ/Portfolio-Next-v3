@@ -1,7 +1,16 @@
-import { InfiniteMovingList } from "@/components/ui/Aceternity/InfinityMovingList";
+import dynamic from "next/dynamic";
 
-type Props = {};
-const TechStackMovingLists = (props: Props) => {
+const InfiniteMovingList = dynamic(
+  () =>
+    import("@/components/ui/Aceternity/InfinityMovingList").then(
+      (m) => m.InfiniteMovingList,
+    ),
+  {
+    ssr: false,
+  },
+);
+
+const TechStackMovingLists = () => {
   const mainTechnologies = [
     "Next.js",
     "Typescript",
