@@ -45,7 +45,7 @@ export const data = {
       id: 1,
       title: "Łączenie Frontendu i Backendu dla Bezproblemowej Integracji",
       description: "",
-      className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
+      className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[600px]",
       imgClassName: "w-full h-full",
       titleClassName: "justify-start max-w-full",
       img: "",

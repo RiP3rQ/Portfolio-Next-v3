@@ -11,7 +11,7 @@ const ProjectImage = ({ img, link, title }: Props) => {
   return (
     <Link href={link} target={"_blank"}>
       <PinContainer title={title} href={link}>
-        <div className="relative flex items-center justify-center sm:w-96 w-[80vw] h-[20vh] lg:h-[30vh]">
+        <div className="relative flex items-center justify-center sm:w-96 w-[80vw] h-[20vh] lg:max-h-[275px] lg:max-w-[384px]">
           <div
             className="relative w-full h-full lg:rounded-3xl"
             style={{ backgroundColor: "#13162D" }}
