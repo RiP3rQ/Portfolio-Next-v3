@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/providers/theme-provider";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Toaster } from "sonner";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,6 +41,13 @@ export default function RootLayout({
             {children}
             <SpeedInsights />
             <Analytics />
+            {process.env.NEXT_PUBLIC_ANALYTICS_TOKEN && (
+              <Script
+                src="https://cdn.rscl.it/ra.js"
+                data-token={process.env.NEXT_PUBLIC_ANALYTICS_TOKEN}
+                strategy="afterInteractive"
+              />
+            )}
           </LocationProvider>
         </ThemeProvider>
       </body>
