@@ -1,6 +1,7 @@
 # 🪐 Cosmis Themed Next.js Portfolio 🌑
 
 ## Description
+
 This is a modern, one-page portfolio website built using the latest version of Next.js. The site features a cosmic theme and leverages cutting-edge UI trends. Amazing animations are provided by Framer Motion and Aceternity UI, while styling is handled by TailwindCSS and the Shadcn UI library. The project aims to deliver a visually stunning and highly interactive user experience.
 
 ## Tech stack
@@ -37,7 +38,6 @@ Install and run "Cosmic-portfolio" with pnpm:
 
 `RESEND_API_KEY` =
 
-
 ### Screenshots
 
 ![App Screenshot](https://raw.githubusercontent.com/RiP3rQ/Portfolio-Next-v3/main/public/screens/1.png?token=GHSAT0AAAAAACPABZMBNTL3DSXL2GPNVKXGZUFZLHQ)
@@ -51,4 +51,3 @@ Install and run "Cosmic-portfolio" with pnpm:
 ![App Screenshot](https://raw.githubusercontent.com/RiP3rQ/Portfolio-Next-v3/main/public/screens/5.png?token=GHSAT0AAAAAACPABZMBBUK4A5KMWA2R4QYCZUFZL5Q)
 
 ![App Screenshot](https://raw.githubusercontent.com/RiP3rQ/Portfolio-Next-v3/main/public/screens/6.png?token=GHSAT0AAAAAACPABZMATOETT72EIOZSUEUOZUFZL6Q)
-

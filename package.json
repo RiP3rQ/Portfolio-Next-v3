@@ -23,6 +23,7 @@
     "@react-email/tailwind": "^0.0.18",
     "@react-three/drei": "^9.107.0",
     "@react-three/fiber": "^8.16.8",
+    "@sentry/nextjs": "8",
     "@tsparticles/engine": "^3.4.0",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.4.0",
