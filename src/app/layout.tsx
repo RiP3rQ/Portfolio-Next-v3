@@ -63,6 +63,7 @@ export const metadata: Metadata = {
       },
     ],
   },
+  themeColor: "#4b1575",
 };
 
 export default function RootLayout({
