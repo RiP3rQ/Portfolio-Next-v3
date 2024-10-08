@@ -11,19 +11,19 @@ import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "RiP3rQ's Portfolio",
+  title: "RiP3rQ - Fullstack developer",
   description:
-    "Junior Fullstack Developer. Specializing in Next.js with passion for backend development and databases management.",
+    "Fullstack Developer with a dedicated focus on coding since 2018. Proficient in Next.js, with a strong emphasis on backend development and database management.",
   alternates: {
     canonical: "https://riperq-codes.pro",
   },
   openGraph: {
-    title: "RiP3rQ's Portfolio",
+    title: "RiP3rQ - Fullstack developer",
     description:
-      "Junior Fullstack Developer. Specializing in Next.js with passion for backend development and databases management.",
+      "Fullstack Developer with a dedicated focus on coding since 2018. Proficient in Next.js, with a strong emphasis on backend development and database management.",
     url: "https://riperq-codes.pro/preview.png",
   },
-  applicationName: "RiP3rQ's Portfolio",
+  applicationName: "RiP3rQ - Fullstack developer",
   creator: "RiP3rQ",
   generator: "Next.js",
   keywords: [
@@ -45,13 +45,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@RiP3rQ",
     creator: "@RiP3rQ",
-    title: "RiP3rQ's Portfolio",
+    title: "RiP3rQ - Fullstack developer",
     description:
-      "Junior Fullstack Developer. Specializing in Next.js with passion for backend development and databases management.",
+      "Fullstack Developer with a dedicated focus on coding since 2018. Proficient in Next.js, with a strong emphasis on backend development and database management.",
     images: [
       {
         url: "https://riperq-codes.pro/preview.png",
-        alt: "RiP3rQ's Portfolio",
+        alt: "RiP3rQ - Fullstack developer",
       },
     ],
   },
