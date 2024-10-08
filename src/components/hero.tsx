@@ -14,8 +14,11 @@ const Hero = ({ data }: Props) => {
   return (
     <div className={"pb-20 pt-36 z-40"}>
       <div
-        className="h-screen w-full dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2] -z-20
-       absolute top-0 left-0 flex items-center justify-center"
+        className="h-[80vh]
+            min-h-1080:h-[67vh] min-h-1440:h-[53vh] min-h-1800:h-[45vh] min-h-2160:h-[30vh] min-h-3000:h-[20vh]
+            w-full dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2] -z-20
+            absolute top-0 left-0 flex items-center justify-center
+        "
       >
         <div
           className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100

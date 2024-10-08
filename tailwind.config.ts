@@ -25,6 +25,13 @@ const config = {
       },
     },
     extend: {
+      screens: {
+        "min-h-1080": { raw: "(min-height: 1080px)" },
+        "min-h-1440": { raw: "(min-height: 1440px)" },
+        "min-h-1800": { raw: "(min-height: 1800px)" },
+        "min-h-2160": { raw: "(min-height: 2160px)" },
+        "min-h-3000": { raw: "(min-height: 3000px)" },
+      },
       boxShadow: {
         input: `0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`,
       },
