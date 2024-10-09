@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { LocationProvider } from "@/providers/localization-provider";
@@ -63,7 +63,32 @@ export const metadata: Metadata = {
       },
     ],
   },
+  verification: {
+    google: "google",
+    yandex: "yandex",
+    yahoo: "yahoo",
+  },
+  robots: {
+    index: true, // Allow the page to be indexed by search engines
+    follow: true, // Allow search engines to follow links on the page
+    nocache: false, // Allow search engines to cache the page for potentially faster loading times
+    googleBot: {
+      index: true, // Allow Google to index the page
+      follow: true, // Allow Google to follow links on the page
+      noimageindex: false, // Allow Google to index images, if you have important visuals
+      "max-video-preview": 0, // Allow video previews if applicable
+      "max-image-preview": "large", // Allow large image previews for better visibility in search results
+      "max-snippet": -1, // Allow full text snippets, which can be beneficial for SEO
+    },
+  },
+};
+
+export const viewport: Viewport = {
   themeColor: "#4b1575",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({
@@ -78,6 +103,7 @@ export default function RootLayout({
           name="google-site-verification"
           content="10Sq2RwsVnvU-fikGubkgJXnDZdkXVt4EglfIiPqUX8"
         />
+        <meta property="og:site_name" content="RiP3rQ - Fullstack developer" />
       </head>
       <body className={inter.className}>
         <ThemeProvider
