@@ -420,7 +420,7 @@ export const data = {
       "Reach out to me today and let's discuss how I can help you achieve your goals.",
     button: "Let's get in touch",
     faq: "Look at FAQ",
-    autograph: "Handcrafted by RiP3rQ @ 2024",
+    autograph: "Handcrafted by RiP3rQ @ 2025",
   },
 
   sheets: {

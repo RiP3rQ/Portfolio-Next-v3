@@ -15,16 +15,16 @@ export const metadata: Metadata = {
   description:
     "Fullstack Developer with a dedicated focus on coding since 2018. Proficient in Next.js, with a strong emphasis on backend development and database management.",
   alternates: {
-    canonical: "https://riperq-codes.pro",
+    canonical: "https://riperq.pro",
   },
   openGraph: {
     title: "RiP3rQ - Fullstack developer",
     description:
       "Fullstack Developer with a dedicated focus on coding since 2018. Proficient in Next.js, with a strong emphasis on backend development and database management.",
-    url: "https://riperq-codes.pro",
+    url: "https://riperq.pro",
     images: [
       {
-        url: "https://riperq-codes.pro/preview.png",
+        url: "https://riperq.pro/preview.png",
         width: 1200,
         height: 630,
         alt: "Preview Image",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
       "Fullstack Developer with a dedicated focus on coding since 2018. Proficient in Next.js, with a strong emphasis on backend development and database management.",
     images: [
       {
-        url: "https://riperq-codes.pro/preview.png",
+        url: "https://riperq.pro/preview.png",
         alt: "RiP3rQ - Fullstack developer",
       },
     ],

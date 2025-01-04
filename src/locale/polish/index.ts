@@ -412,7 +412,7 @@ export const data = {
       "Skontaktuj się ze mną jeszcze dziś, aby omówić, jak mogę pomóc Ci osiągnąć swoje cele.",
     button: "Nawiąż kontakt",
     faq: "Sprawdź najczęstsze pytania",
-    autograph: "Stworzone przez RiP3rQ @ 2024",
+    autograph: "Stworzone przez RiP3rQ @ 2025",
   },
 
   sheets: {
